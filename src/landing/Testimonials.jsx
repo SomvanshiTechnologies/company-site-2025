@@ -205,7 +205,9 @@ const Testimonials = () => {
       </section>
 
       {/* --- Bottom CTA Section with Background Image --- */}
-      <section className="relative text-white overflow-hidden">
+      <section className="pb-50" >
+        
+        <section className="relative h-75 text-white overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 z-0"
@@ -218,16 +220,16 @@ const Testimonials = () => {
         />
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto py-24 sm:py-32 px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-2xl sm:text-3xl font-normal tracking-wide">
+        <div className="relative z-10 max-w-7xl mx-auto py-20 px-6 lg:px-8 text-left">
+          <h2 className="font-heading text-4xl sm:text-4xl font-normal tracking-wide">
             Your AI journey starts here.
           </h2>
-          <h3 className="mt-2 font-heading text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
+          <h3 className="mt-1.5 font-heading text-4xl sm:text-4xl font-normal tracking-wide">
             Let's create something intelligent together.
           </h3>
 
           {/* CTA Button */}
-          <div className="mt-10">
+          <div className="mt-5">
             <a
               href="contact"
               className="
@@ -237,7 +239,7 @@ const Testimonials = () => {
                 font-body font-medium text-white
                 border-2 border-white
                 rounded-lg
-                px-8 py-3.5
+                px-8 py-3
                 text-base
                 hover:bg-white
                 hover:text-purple-700
@@ -251,6 +253,7 @@ const Testimonials = () => {
             </a>
           </div>
         </div>
+      </section>
       </section>
     </>
   );

@@ -6,23 +6,21 @@ import rocket from '../assets/rocket.png';
 const impactData = [
   {
     title: 'Ways AI is Transforming Customer Support',
-    description: 'With conversational AI platform, our clients reduced response time by 60% while improving customer satisfaction scores......',
-    linkText: 'Check',
+    description: 'With our conversational AI platform, clients reduced response time by 60% while improving customer satisfaction scores. Our intelligent chatbots handle thousands of queries simultaneously, providing instant, accurate responses 24/7. This transformation has led to increased customer retention and significant cost savings in support operations.',
   },
   {
     title: 'AI-Driven Process Automation for Business Efficiency',
-    description: 'Somvanshi\'s AI automation suite helped clients eliminate repetitive manual tasks, cutting operational costs by up to 40%......',
-    linkText: 'Check',
+    description: 'Somvanshi\'s AI automation suite helped clients eliminate repetitive manual tasks, cutting operational costs by up to 40%. From document processing to workflow optimization, our solutions streamline operations and free up valuable human resources for strategic initiatives. Companies report improved accuracy and faster turnaround times across all automated processes.',
   },
   {
-    title: 'Ways AI is Transforming Customer Support',
-    description: 'Write an amazing......',
-    linkText: 'Check',
+    title: 'Predictive Analytics for Data-Driven Decision Making',
+    description: 'Our advanced predictive analytics tools empower businesses to make informed decisions based on real-time data insights. Clients have experienced up to 35% improvement in forecasting accuracy, enabling better inventory management, resource allocation, and strategic planning. Transform your raw data into actionable intelligence that drives growth.',
   }
 ];
 
 const BusinessImpact = () => {
   const sectionRef = useRef(null);
+  const [expandedIndex, setExpandedIndex] = useState(0); // First accordion expanded by default
 
   // Framer Motion scroll tracking
   const { scrollYProgress } = useScroll({
@@ -76,34 +74,56 @@ const BusinessImpact = () => {
               <span className="text-text"> of clients</span>
             </h2>
 
-            {/* Items List */}
-            <div className="space-y-6">
+            {/* Accordions */}
+            <div className="space-y-4">
               {impactData.map((item, index) => (
-                <div key={index}>
-                  {/* Add a separator before each item except the first one */}
-                  {index > 0 && <hr className="border-gray-300/70 my-6" />}
+                <motion.div
+                  key={index}
+                  className="border border-gray-300/50 rounded-lg overflow-hidden bg-white/50 backdrop-blur-sm"
+                  onMouseEnter={() => setExpandedIndex(index)}
+                  initial={false}
+                >
+                  {/* Accordion Header */}
+                  <div className="p-4 cursor-pointer">
+                    <h3 className="font-heading text-lg sm:text-xl font-semibold text-text">
+                      {item.title}
+                    </h3>
+                  </div>
 
-                  <h3 className="font-heading text-xl font-semibold text-text mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="font-body text-gray-600 mb-3">
-                    {item.description}
-                  </p>
-                  <a href="#" className="font-body font-medium text-primary hover:opacity-80">
-                    {item.linkText}
-                  </a>
-                </div>
+                  {/* Accordion Content */}
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: expandedIndex === index ? "auto" : 0,
+                      opacity: expandedIndex === index ? 1 : 0
+                    }}
+                    transition={{
+                      height: { duration: 0.4, ease: "easeInOut" },
+                      opacity: { duration: 0.3, ease: "easeInOut" }
+                    }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-4 pb-4">
+                      <p className="font-body text-gray-600">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
           </div>
 
           {/* --- Right Column: Rocket Launch Animation --- */}
-          <div className="relative flex items-center justify-center min-h-[550px] overflow-hidden rounded-lg shadow-lg">
-            {/* Background Image */}
-            <img
-              src={bgimg}
-              alt="Space background"
-              className="absolute inset-0 w-full h-full object-cover"
+          <div className="relative flex items-center justify-center min-h-[680px] overflow-hidden rounded-lg shadow-lg">
+            {/* Background Image - Static */}
+            <div
+              className="absolute inset-0 w-full h-full"
+              style={{
+                backgroundImage: `url(${bgimg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
             />
 
             {/* Animated Clouds Layer - Moving Down with Parallax */}

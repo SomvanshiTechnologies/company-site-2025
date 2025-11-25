@@ -9,12 +9,12 @@ const capabilitiesData = [
   },
   {
     title: 'Autonomous Operations',
-    description: 'Eliminate repetitive tasks — our AI automates workflows, saving time and improving accuracy.',
+    description: 'Eliminate repetitive tasks our AI automates workflows, saving time and improving accuracy.',
     linkText: 'View More',
   },
   {
     title: 'Fortified Intelligence',
-    description: 'AI systems that are strong, secure, and reliable — protected from threats and built to operate safely at scale.',
+    description: 'AI systems that are strong, secure, and reliable protected from threats and built to operate safely at scale.',
     linkText: 'View More',
   }
 ];
@@ -56,7 +56,7 @@ export default function CoreCapabilities() {
                   - 'pt-6' adds padding above it
                   - For the last item (index === 2), 'md:self-end' aligns it to the right
                 */}
-                <a
+                {/* <a
                   href="#"
                   className={`
                     font-body font-medium text-white hover:opacity-80 mt-auto pt-6
@@ -64,7 +64,7 @@ export default function CoreCapabilities() {
                   `}
                 >
                   {item.linkText}
-                </a>
+                </a> */}
               </div>
             ))}
             

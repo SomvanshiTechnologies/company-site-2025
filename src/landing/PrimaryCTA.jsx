@@ -61,7 +61,7 @@ const PrimaryCTA = () => {
             {/* CTA Button */}
             <div className="mt-10">
               <a
-                href="#"
+                href="contact"
                 className="
                   inline-block 
                   rounded-md 

@@ -47,7 +47,7 @@ const AboutUs = () => {
               {/* CTA Button */}
               <div className="mt-10">
                 <a
-                  href="#"
+                  href="contact"
                   className="
                     font-body font-medium text-primary 
                     border border-primary 
