@@ -184,7 +184,7 @@ const Solutions = () => {
           {tabsData[activeTab].cards.map((card, index) => (
             <div
               key={`${tabsData[activeTab].name}-${card.id}`}
-              className="bg-white p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-300 ease-in-out"
+              className="border-0.1 border-primary bg-white p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-300 ease-in-out"
               style={{ transitionDelay: `${index * 50}ms` }}
             >
               <h3

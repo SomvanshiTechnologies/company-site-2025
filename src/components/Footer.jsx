@@ -17,7 +17,7 @@ const technologies = [
 const company = [
   { name: 'About Us', href: '#' },
   { name: 'Careers', href: '#' },
-  { name: 'Contact', href: '#' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 

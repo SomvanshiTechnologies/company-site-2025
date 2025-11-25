@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaCircleChevronLeft , FaCircleChevronRight } from "react-icons/fa6";
+import { FaAngleLeft , FaAngleRight } from "react-icons/fa6";
 import { CgArrowLongRight } from "react-icons/cg";
 import { supabase } from '../config/supabase';
 
@@ -111,7 +111,8 @@ const LatestTrends = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Large Cards */}
           {largeCards.map((card) => (
-            <div key={card.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 p-3 hover:shadow-lg transition-shadow">
+            <Link to={`/trends/${card.id}`} className="p-2 text-primary hover:opacity-80">
+              <div key={card.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 p-3 hover:shadow-lg transition-shadow">
               {card.image_url && (
                 <img src={card.image_url} alt={card.title} className="w-full h-48 object-cover border rounded" />
               )}
@@ -125,17 +126,16 @@ const LatestTrends = () => {
                 <p className="font-body text-gray-600 mb-4">
                   {card.excerpt}
                 </p>
-                <Link to={`/trends/${card.id}`} className="p-2 text-primary hover:opacity-80">
-                  <CgArrowLongRight className="w-6 h-6" />
-                </Link>
-              </div>
+                  <CgArrowLongRight className="w-6 h-6" />                
+              </div>              
             </div>
+            </Link>
           ))}
           
           {/* Small Cards Column */}
           <div className="flex flex-col gap-8">
             {smallCards.map((card) => (
-              <div key={card.id} className="bg-gradient-soft p-6 rounded-lg shadow-md border border-gray-200">
+              <div key={card.id} className="bg-gradient-soft p-4.5 rounded-lg shadow-md border border-gray-200">
                 <p className="font-body text-sm text-gray-500 mb-2">
                   <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
                 </p>
@@ -161,13 +161,13 @@ const LatestTrends = () => {
               aria-label="Previous"
               className="w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
             >
-              <FaCircleChevronLeft className="w-5 h-5" />
+              <FaAngleLeft className="text-primary w-5 h-5" />
             </button>
             <button
               aria-label="Next"
               className="w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
             >
-              <FaCircleChevronRight className="w-5 h-5" />
+              <FaAngleRight className="text-primary w-5 h-5" />
             </button>
           </div>
           
