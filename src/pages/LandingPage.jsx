@@ -12,6 +12,7 @@ import PrimaryCTA from '../landing/PrimaryCTA';
 import LatestNews from '../landing/LatestNews';
 import Testimonials from '../landing/Testimonials';
 import Info from '../landing/Info';
+import Transformation from '@/landing/Transformation';
 const LandingPage = () => {
   return (
     <div className="min-h-screen w-full">
@@ -21,6 +22,7 @@ const LandingPage = () => {
         <HeroSection />
         <Info />
         <LatestTrends />
+        <Transformation />
         <Solutions />
         <Technologies />
         <BusinessImpact />
