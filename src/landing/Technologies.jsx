@@ -59,26 +59,27 @@ const Technologies = () => {
   const duplicatedTechnologies = [...technologies, ...technologies, ...technologies];
 
   return (
-    <section className="py-16 sm:py-24 px-4 bg-gradient-light overflow-hidden">
+    <section className="py-16 sm:py-24 px-4  overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <h2
-          className="text-4xl md:text-5xl text-center mb-4 text-text"
+          className="text-4xl md:text-3xl text-center mb-10 text-text"
           style={{ fontFamily: 'var(--font-heading)', fontWeight: '600' }}
         >
           Technologies We Use
         </h2>
-        <p
+       { /*        <p
           className="text-center text-text opacity-70 mb-16 max-w-3xl mx-auto"
           style={{ fontFamily: 'var(--font-body)' }}
         >
           Leveraging cutting-edge tools and frameworks to build robust, scalable, and innovative solutions
         </p>
+        */}
 
         {/* Infinite Scrolling Carousel */}
         <div className="relative overflow-hidden">
           {/* Gradient overlays for smooth fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-[#FFFEED] to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-[#FFFEED] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"></div>
 
           <div className="flex animate-scroll">
             {duplicatedTechnologies.map((tech, index) => (

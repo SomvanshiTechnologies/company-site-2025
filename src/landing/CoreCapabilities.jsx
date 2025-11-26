@@ -26,7 +26,7 @@ export default function CoreCapabilities() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-left mb-12">
           <h2 className="text-3xl sm:text-4xl font-heading font-semibold text-text">
             AI that Transforms the Way You Work
           </h2>
@@ -36,18 +36,18 @@ export default function CoreCapabilities() {
         <div className="bg-gradient-purple text-white rounded-xl shadow-2xl p-10 sm:p-12 lg:p-16">
           
           {/* Capabilities Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-7">
             
             {capabilitiesData.map((item, index) => (
               // Each column item
               // Using flex to push the "View More" link to the bottom
               <div key={item.title} className="flex flex-col">
                 
-                <h3 className="font-heading text-3xl font-semibold mb-4">
+                <h4 className="font-heading text-3xl font-semibold mb-4 text-left">
                   {item.title}
-                </h3>
+                </h4>
                 
-                <p className="font-body text-gray-200 text-lg leading-7">
+                <p className="font-body text-gray-300 text-sm leading-7 text-left">
                   {item.description}
                 </p>
                 

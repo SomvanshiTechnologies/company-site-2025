@@ -135,7 +135,7 @@ const LatestTrends = () => {
           {/* Small Cards Column */}
           <div className="flex flex-col gap-8">
             {smallCards.map((card) => (
-              <div key={card.id} className="bg-gradient-soft p-4.5 rounded-lg shadow-md border border-gray-200">
+              <div key={card.id} className="bg-gradient-soft p-4 rounded-lg shadow-md border border-gray-200">
                 <p className="font-body text-sm text-gray-500 mb-2">
                   <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
                 </p>
@@ -154,20 +154,20 @@ const LatestTrends = () => {
         </div>
         
         {/* Footer Controls */}
-        <div className="flex justify-between items-center mt-12">
+        <div className="flex justify-between items-center mt-6">
           {/* Pagination */}
-          <div className="flex gap-2">
+          <div className="flex gap-1">
             <button
               aria-label="Previous"
-              className="w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+              className="w-12 h-9 flex items-center justify-center rounded-md border border-blue-200  text-blue-800 hover:bg-blue-50"
             >
-              <FaAngleLeft className="text-primary w-5 h-5" />
+              <FaAngleLeft className="text-primary w-3 h-3" />
             </button>
             <button
               aria-label="Next"
-              className="w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+              className="w-12 h-9 flex items-center justify-center rounded-md border border-blue-200  text-blue-800 hover:bg-blue-50"
             >
-              <FaAngleRight className="text-primary w-5 h-5" />
+              <FaAngleRight className="text-primary w-3 h-3" />
             </button>
           </div>
           

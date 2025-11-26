@@ -33,26 +33,26 @@ const AboutUs = () => {
         <section className="relative bg-gradient-light py-16 sm:py-24">
           {/* Main content container */}
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="max-w-2xl">
+            <div className="max-w-3xl">
               {/* Headline */}
-              <h2 className="font-heading text-4xl sm:text-5xl font-semibold text-text">
+              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-text">
                 We design systems that learn, adapt, and evolve with you.
               </h2>
               
               {/* Sub-headline */}
-              <p className="mt-6 font-body text-lg leading-8 text-gray-600">
+              <p className="mt-4 font-body text-sm leading-8 text-gray-600">
                 From healthcare startups to e-commerce platforms, we serve businesses across industries.
               </p>
               
               {/* CTA Button */}
-              <div className="mt-10">
+              <div className="mt-7">
                 <a
                   href="contact"
                   className="
                     font-body font-medium text-primary 
                     border border-primary 
                     rounded-md 
-                    px-4 py-2.5 
+                    px-4 py-2
                     text-sm 
                     hover:bg-primary/5 
                     transition-colors
