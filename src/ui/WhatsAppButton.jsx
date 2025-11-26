@@ -14,8 +14,8 @@ const WhatsAppButton = () => {
 
   const handleCallClick = () => {
     // Track call button click
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'call_button_click', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'call_button_click', {
         event_category: 'engagement',
         event_label: 'call_button',
         value: 1
@@ -25,8 +25,8 @@ const WhatsAppButton = () => {
 
   const handleWhatsAppClick = () => {
     // Track WhatsApp button click
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'whatsapp_button_click', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'whatsapp_button_click', {
         event_category: 'engagement',
         event_label: 'whatsapp_button',
         value: 1
@@ -55,10 +55,10 @@ const WhatsAppButton = () => {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: 50 }}
         transition={{ duration: 0.5, delay: 0.7 }}
-        className="bg-blue-500 text-white text-2xl md:text-3xl border-4 border-white rounded-full p-3 shadow-lg hover:shadow-blue-500 hover:bg-blue-600 transition duration-300"
+        className="bg-primary text-white text-2xl md:text-3xl border-4 border-white rounded-full p-3 shadow-lg hover:shadow-blue-200 hover:bg-blue-400 transition duration-300"
         href="tel:+919637507575"
         title="Call us at +91 96375 07575"
-        // onClick={handleCallClick}
+        onClick={handleCallClick}
       >
         <FaPhone />
       </motion.a>

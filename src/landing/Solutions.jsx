@@ -153,7 +153,7 @@ const Solutions = () => {
 
         <div className="mb-12 w-[60%] mx-auto relative">
           {/* Full light blue bottom line */}
-          <div className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-100"></div>
+          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-100"></div>
 
           <nav className="flex justify-between gap-x-6" aria-label="Tabs">
             {tabsData.map((tab, index) => (
@@ -196,24 +196,24 @@ const Solutions = () => {
           {tabsData[activeTab].cards.map((card, index) => (
             <div
               key={`${tabsData[activeTab].name}-${card.id}`}
-              className="border-0.1 border-primary bg-white p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-300 ease-in-out"
+              className="border-0.1 border-primary bg-white p-8 rounded-xl border hover:border-gray-300 hover:shadow-md transition-all duration-300 ease-in-out flex flex-col h-full"
               style={{ transitionDelay: `${index * 50}ms` }}
             >
               <h3
-                className="text-2xl mb-4 text-text"
-                style={{ fontFamily: "var(--font-heading)", fontWeight: "500" }}
+                className="text-2xl mb-4 text-text font-blod"
+                style={{ fontFamily: "var(--font-heading)", fontWeight: "900 !important" }}
               >
                 {card.title}
               </h3>
               <p
-                className="leading-relaxed mb-8 text-text text-sm opacity-70"
+                className="leading-relaxed mb-8 text-text text-sm opacity-70 line-clamp-3"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 {card.excerpt}
               </p>
               <Link
                 to={`/solutions/${card.id}`}
-                className="border-2 border-primary text-primary rounded-lg px-8 py-2.5 hover:bg-primary hover:text-white transition-all duration-300 ease-in-out inline-block"
+                className="border-2 border-primary text-primary rounded-lg px-8 py-2.5 hover:bg-primary hover:text-white transition-all duration-300 ease-in-out inline-block mt-auto w-fit"
                 style={{ fontFamily: "var(--font-body)", fontWeight: "500" }}
               >
                 View

@@ -278,8 +278,7 @@ const Footer = () => {
       </footer>
 
       {/* --- Floating Action Buttons --- */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        {/* Phone Button */}
+      {/* <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
         <a
           href="tel:+919637507575"
           aria-label="Call us"
@@ -298,7 +297,6 @@ const Footer = () => {
         >
           <FloatingPhoneIcon />
         </a>
-        {/* WhatsApp Button */}
         <a
           href="https://wa.me/919171018101"
           target="_blank"
@@ -319,7 +317,7 @@ const Footer = () => {
         >
           <WhatsAppIcon />
         </a>
-      </div>
+      </div> */}
     </>
   );
 };

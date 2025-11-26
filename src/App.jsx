@@ -11,6 +11,7 @@ import AdminLogin from "./admin/AdminLogin";
 import ManagePage from "./admin/ManagePage";
 import ProtectedRoute from "./admin/components/ProtectedRoute";
 import Contact from "./ui/contact";
+import WhatsAppButton from "./ui/WhatsAppButton";
 
 export default function App() {
   return (
@@ -39,6 +40,9 @@ export default function App() {
             }
           />
         </Routes>
+
+        {/* Floating WhatsApp & Call Buttons - Visible on all pages */}
+        <WhatsAppButton />
       </div>
     </Router>
   );

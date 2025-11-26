@@ -87,19 +87,19 @@ const LatestNews = () => {
               // News Card
               <div
                 key={item.id}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-100 flex flex-col"
+                className="bg-white p-3.5 rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-100 flex flex-col "
               >
                 {/* Card Image */}
                 {item.image_url && (
                   <img
                     src={item.image_url}
                     alt={item.title}
-                    className="w-full h-52 object-cover"
+                    className="w-full h-52 object-cover rounded-md"
                   />
                 )}
 
                 {/* Card Content */}
-                <div className="p-6 flex flex-col flex-1">
+                <div className="pt-6 pl-3 flex flex-col flex-1">
                   {/* Author Meta */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
@@ -133,11 +133,11 @@ const LatestNews = () => {
                       to={`/news/${item.id}`}
                       className="
                         inline-flex items-center gap-2
-                        font-body font-medium text-blue-600
-                        border-2 border-blue-600
+                        font-body font-medium text-primary
+                        border-2 border-primary
                         rounded-lg
                         px-5 py-2.5
-                        text-sm
+                        text-m
                         hover:bg-blue-50
                         transition-all
                       "
