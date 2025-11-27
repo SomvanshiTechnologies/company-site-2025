@@ -7,7 +7,7 @@ const CustomGridStyles = () => (
         background-image:
           linear-gradient(to right, rgba(84, 84, 191, 0.4) 1px, transparent 1px),
           linear-gradient(to bottom, rgba(48, 80, 207, 0.4) 1px, transparent 1px);
-        background-size: 19px 19px;
+        background-size: 40px 19px;
         opacity: 0.7;
       }
 
