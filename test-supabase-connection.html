@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Connection Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-result {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #ccc;
+        }
+        .success {
+            border-left-color: #22c55e;
+            background: #f0fdf4;
+        }
+        .error {
+            border-left-color: #ef4444;
+            background: #fef2f2;
+        }
+        .info {
+            border-left-color: #3b82f6;
+            background: #eff6ff;
+        }
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Supabase Connection Test</h1>
+    <p>This will test your Supabase connection and diagnose the issue with the technologies table.</p>
+
+    <button onclick="runTests()">Run Tests</button>
+    <div id="results"></div>
+
+    <script>
+        const SUPABASE_URL = 'https://jcvwrkyuappukkbsuyjx.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impjdndya3l1YXBwdWtrYnN1eWp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwOTU5OTAsImV4cCI6MjA3ODY3MTk5MH0._LufSNw7YD_BpoH-TpcWZbfKi5XEHYBp2l2w8AO1784';
+
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        function addResult(message, type = 'info', data = null) {
+            const resultsDiv = document.getElementById('results');
+            const resultDiv = document.createElement('div');
+            resultDiv.className = `test-result ${type}`;
+
+            let html = `<strong>${message}</strong>`;
+            if (data) {
+                html += `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            }
+
+            resultDiv.innerHTML = html;
+            resultsDiv.appendChild(resultDiv);
+        }
+
+        async function runTests() {
+            document.getElementById('results').innerHTML = '';
+            addResult('🚀 Starting tests...', 'info');
+
+            // Test 1: Fetch from solutions table (known to work)
+            addResult('Test 1: Fetching from solutions table', 'info');
+            try {
+                const { data, error } = await supabase
+                    .from('solutions')
+                    .select('id, title')
+                    .limit(3);
+
+                if (error) {
+                    addResult('❌ Solutions table error', 'error', error);
+                } else {
+                    addResult(`✅ Solutions table works! Found ${data.length} records`, 'success', data);
+                }
+            } catch (err) {
+                addResult('❌ Solutions table exception', 'error', err);
+            }
+
+            // Test 2: Fetch from technologies table
+            addResult('Test 2: Fetching from technologies table', 'info');
+            try {
+                const { data, error } = await supabase
+                    .from('technologies')
+                    .select('id, title, category')
+                    .limit(3);
+
+                if (error) {
+                    addResult('❌ Technologies table error - THIS IS THE PROBLEM!', 'error', {
+                        code: error.code,
+                        message: error.message,
+                        details: error.details,
+                        hint: error.hint
+                    });
+                } else {
+                    addResult(`✅ Technologies table works! Found ${data.length} records`, 'success', data);
+                }
+            } catch (err) {
+                addResult('❌ Technologies table exception', 'error', err);
+            }
+
+            // Test 3: Direct REST API call
+            addResult('Test 3: Direct REST API test', 'info');
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/technologies?select=*&limit=3`, {
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                    }
+                });
+
+                const text = await response.text();
+
+                if (response.ok) {
+                    const data = JSON.parse(text);
+                    addResult('✅ Direct API call works!', 'success', data);
+                } else {
+                    addResult(`❌ Direct API call failed (${response.status})`, 'error', {
+                        status: response.status,
+                        statusText: response.statusText,
+                        response: text
+                    });
+                }
+            } catch (err) {
+                addResult('❌ Direct API call exception', 'error', err);
+            }
+
+            addResult('✅ Tests complete!', 'success');
+        }
+    </script>
+</body>
+</html>

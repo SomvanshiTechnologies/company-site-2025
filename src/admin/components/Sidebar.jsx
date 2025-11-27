@@ -1,11 +1,12 @@
 import React from 'react';
-import { FiFileText, FiTrendingUp, FiGrid, FiLogOut, FiMenu, FiX } from 'react-icons/fi';
+import { FiFileText, FiTrendingUp, FiGrid, FiLogOut, FiMenu, FiX, FiCpu } from 'react-icons/fi';
 
 const Sidebar = ({ activeTab, setActiveTab, handleLogout, sidebarOpen, setSidebarOpen }) => {
   const menuItems = [
     { id: 'news', label: 'Latest News', icon: FiFileText },
     { id: 'trends', label: 'Trends & Insights', icon: FiTrendingUp },
     { id: 'solutions', label: 'Solutions', icon: FiGrid },
+    { id: 'technologies', label: 'Technologies', icon: FiCpu },
   ];
 
   return (

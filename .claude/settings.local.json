@@ -7,7 +7,8 @@
       "Bash(mkdir:*)",
       "mcp__ide__getDiagnostics",
       "Bash(node --version)",
-      "Bash(node test-solutions.js:*)"
+      "Bash(node test-solutions.js:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
