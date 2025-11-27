@@ -165,20 +165,20 @@ const Testimonials = () => {
             </div>
 
             {/* Slider Controls */}
-            <div className="flex items-center justify-between mt-8">
+            <div className="flex items-center justify-between mt-2">
               {/* Arrows on LEFT */}
               <div className="flex gap-1">
                 <button
                   onClick={handlePrevious}
                   aria-label="Previous testimonial"
-                  className="w-12 h-10 flex items-center justify-center rounded-md border border-blue-300 bg-white text-blue-500 hover:bg-blue-50 transition-all duration-200 cursor-pointer"
+                  className="w-12 h-9 flex items-center justify-center rounded-md border border-blue-200  text-blue-400 hover:bg-blue-50"
                 >
                   <FaChevronLeft className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={handleNext}
                   aria-label="Next testimonial"
-                  className="w-12 h-10 flex items-center justify-center rounded-md border border-blue-300 bg-white text-blue-500 hover:bg-blue-50 transition-all duration-200 cursor-pointer"
+                  className="w-12 h-9 flex items-center justify-center rounded-md border border-blue-200  text-blue-400 hover:bg-blue-50"
                 >
                   <FaChevronRight className="w-3.5 h-3.5" />
                 </button>
@@ -220,7 +220,7 @@ const Testimonials = () => {
         />
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto py-20 px-6 lg:px-8 text-left">
+        <div className="relative z-10 max-w-7xl mx-auto py-20 px-6 lg:px-8 ml-20 text-left">
           <h2 className="font-heading text-4xl sm:text-4xl font-normal tracking-wide">
             Your AI journey starts here.
           </h2>
@@ -229,7 +229,7 @@ const Testimonials = () => {
           </h3>
 
           {/* CTA Button */}
-          <div className="mt-5">
+          <div className="mt-4">
             <a
               href="contact"
               className="

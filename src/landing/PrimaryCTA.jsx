@@ -5,9 +5,9 @@ const CustomGridStyles = () => (
     {`
       .bg-grid-pattern {
         background-image:
-          linear-gradient(to right, rgba(31, 63, 188, 0.4) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(13, 33, 111, 0.4) 1px, transparent 1px);
-        background-size: 14px 14px;
+          linear-gradient(to right, rgba(84, 84, 191, 0.4) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(48, 80, 207, 0.4) 1px, transparent 1px);
+        background-size: 19px 19px;
         opacity: 0.7;
       }
 
@@ -48,7 +48,7 @@ const PrimaryCTA = () => {
         />
 
         {/* Main Content */}
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
+        <div className="relative max-w-8xl mx-auto px-8 lg:px-8 z-10 ml-20">
           <div className="max-w-2xl">
             <p className="font-body text-sm font-bold text-blue-900">
               Start building today!

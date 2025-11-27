@@ -182,7 +182,7 @@ const Footer = () => {
             </div>
 
             {/* Right Section: 3 Columns */}
-            <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-10">
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-10 mb-30">
               {/* Solutions */}
               <div>
                 <h3 className="font-heading text-lg font-semibold text-white mb-4">
