@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const navigation = [
     { name: "Platform", href: "/" },
-    {
+    {/*{
       name: "Solution",
       href: "#",
       dropdown: [
@@ -31,9 +31,12 @@ const Navbar = () => {
         { name: "Cloud Optimization", href: "/technologies/cloud" },
         { name: "Hosting Solutions", href: "/technologies/hosting" },
       ],
-    },
+    },*/},
+    
+    { name: "Solutions", href: "/technologies" },
+
     {
-      name: "Industries",
+      name: "Industries", 
       href: "#",
       dropdown: [
         { name: "Healthcare", href: "/industries/healthcare" },
