@@ -107,56 +107,118 @@ const LatestTrends = () => {
           </h2>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Content Grid - Desktop */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-8">
           {/* Large Cards */}
           {largeCards.map((card) => (
-            <Link to={`/trends/${card.id}`} className="p-2 text-primary hover:opacity-80">
-              <div key={card.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 p-3 hover:shadow-lg transition-shadow">
+            <Link key={card.id} to={`/trends/${card.id}`} className="p-2 text-primary hover:opacity-80">
+              <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 p-3 hover:shadow-lg transition-shadow h-full flex flex-col">
               {card.image_url && (
                 <img src={card.image_url} alt={card.title} className="w-full h-48 object-cover border rounded" />
               )}
-              <div className="pr-3.5 mt-4 ">
+              <div className="pr-3.5 mt-4 flex-1 flex flex-col">
                 <p className="font-body text-sm text-gray-500 mb-2">
                  <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
                 </p>
-                <h3 className="font-heading text-xl font-semibold text-text mb-3">
+                <h3 className="font-heading text-xl font-semibold text-text mb-3 line-clamp-2">
                   {card.title}
                 </h3>
-                <p className="font-body text-gray-600 mb-4">
+                <p className="font-body text-gray-600 mb-4 line-clamp-3 flex-1">
                   {card.excerpt}
                 </p>
-                  <CgArrowLongRight className="w-6 h-6" />                
-              </div>              
+                  <CgArrowLongRight className="w-6 h-6" />
+              </div>
             </div>
             </Link>
           ))}
-          
-          {/* Small Cards Column */}
-          <div className="flex flex-col gap-8">
+
+          {/* Small Cards Column - Desktop */}
+          <div className="flex flex-col gap-4 h-full">
             {smallCards.map((card) => (
-              <div key={card.id} className="bg-gradient-soft p-4 rounded-lg shadow-md border border-gray-200">
-                <p className="font-body text-sm text-gray-500 mb-2">
-                  <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
-                </p>
-                <h3 className="font-heading text-lg font-semibold text-text mb-3">
-                  {card.title}
-                </h3>
-                <p className="font-body text-gray-600 mb-4">
-                  {card.excerpt}
-                </p>
-                <Link to={`/trends/${card.id}`} className="text-primary hover:opacity-80">
-                  <CgArrowLongRight className="w-6 h-6" />
-                </Link>
-              </div>
+              <Link key={card.id} to={`/trends/${card.id}`} className="flex-1">
+                <div className="bg-gradient-soft p-4 rounded-lg shadow-md border border-gray-200 h-full flex flex-col hover:shadow-lg transition-shadow">
+                  <p className="font-body text-sm text-gray-500 mb-2">
+                    <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
+                  </p>
+                  <h3 className="font-heading text-lg font-semibold text-text mb-3 line-clamp-2">
+                    {card.title}
+                  </h3>
+                  <p className="font-body text-gray-600 mb-4 line-clamp-2 flex-1">
+                    {card.excerpt}
+                  </p>
+                  <div className="text-primary hover:opacity-80">
+                    <CgArrowLongRight className="w-6 h-6" />
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
+
+        {/* Mobile Horizontal Scroll Layout */}
+        <div className="lg:hidden">
+          {/* Article Cards - Horizontal Scroll */}
+          {largeCards.length > 0 && (
+            <div className="mb-8">
+              <h3 className="font-heading text-lg font-semibold text-text mb-4">Articles</h3>
+              <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory">
+                {largeCards.map((card) => (
+                  <Link key={card.id} to={`/trends/${card.id}`} className="shrink-0 w-[85%] sm:w-[70%] snap-start">
+                    <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 p-3 hover:shadow-lg transition-shadow h-full">
+                      {card.image_url && (
+                        <img src={card.image_url} alt={card.title} className="w-full h-48 object-cover border rounded" />
+                      )}
+                      <div className="pr-3.5 mt-4">
+                        <p className="font-body text-sm text-gray-500 mb-2">
+                          <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
+                        </p>
+                        <h3 className="font-heading text-xl font-semibold text-text mb-3 line-clamp-2">
+                          {card.title}
+                        </h3>
+                        <p className="font-body text-gray-600 mb-4 line-clamp-3">
+                          {card.excerpt}
+                        </p>
+                        <CgArrowLongRight className="w-6 h-6 text-primary" />
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Venue Cards - Horizontal Scroll */}
+          {smallCards.length > 0 && (
+            <div>
+              <h3 className="font-heading text-lg font-semibold text-text mb-4">Venues</h3>
+              <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory">
+                {smallCards.map((card) => (
+                  <Link key={card.id} to={`/trends/${card.id}`} className="shrink-0 w-[85%] sm:w-[70%] snap-start">
+                    <div className="bg-gradient-soft p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow h-full">
+                      <p className="font-body text-sm text-gray-500 mb-2">
+                        <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
+                      </p>
+                      <h3 className="font-heading text-lg font-semibold text-text mb-3 line-clamp-2">
+                        {card.title}
+                      </h3>
+                      <p className="font-body text-gray-600 mb-4 line-clamp-2">
+                        {card.excerpt}
+                      </p>
+                      <div className="text-primary hover:opacity-80">
+                        <CgArrowLongRight className="w-6 h-6" />
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
         
         {/* Footer Controls */}
-        <div className="flex justify-between items-center mt-6">
-          {/* Pagination */}
-          <div className="flex gap-1">
+        <div className="flex flex-col sm:flex-row justify-between items-center mt-6 gap-4">
+          {/* Pagination - Hidden on mobile */}
+          <div className="hidden lg:flex gap-1">
             <button
               aria-label="Previous"
               className="w-12 h-9 flex items-center justify-center rounded-md border border-blue-200  text-blue-800 hover:bg-blue-50"
@@ -170,10 +232,10 @@ const LatestTrends = () => {
               <FaAngleRight className="text-primary w-3 h-3" />
             </button>
           </div>
-          
+
           {/* Explore Link */}
-          <div>
-            <Link to="/trends" className="font-body font-medium text-primary text-sm hover:opacity-80">
+          <div className="w-full sm:w-auto text-center sm:text-right">
+            <Link to="/trends" className="font-body font-medium text-primary text-sm hover:opacity-80 inline-block">
               Explore all Trends and Insights
               <span aria-hidden="true" className="ml-1">→</span>
             </Link>

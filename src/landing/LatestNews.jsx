@@ -70,87 +70,99 @@ const LatestNews = () => {
             <span aria-hidden="true" className="ml-1">→</span>
           </Link>
         </div>
-        
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {loading ? (
-            <div className="col-span-3 text-center py-12">
-              <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-gray-600 font-body">Loading news...</p>
-            </div>
-          ) : displayNews.length === 0 ? (
-            <div className="col-span-3 text-center py-12">
-              <p className="text-gray-600 font-body">No news available at the moment.</p>
-            </div>
-          ) : (
-            displayNews.map((item) => (
-              // News Card
-              <div
-                key={item.id}
-                className="bg-white p-3.5 rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-100 flex flex-col "
-              >
-                {/* Card Image */}
-                {item.image_url && (
-                  <img
-                    src={item.image_url}
-                    alt={item.title}
-                    className="w-full h-52 object-cover rounded-md"
-                  />
-                )}
 
-                {/* Card Content */}
-                <div className="pt-6 pl-3 flex flex-col flex-1">
-                  {/* Author Meta */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-2">
-                      <img
-                        src={item.author_avatar_url || 'https://placehold.co/40x40/E0E7FF/4F46E5?text=AV'}
-                        alt={item.author_name}
-                        className="w-10 h-10 rounded-full object-cover"
-                      />
-                      <span className="font-body font-normal text-gray-800 text-sm">
-                        By {item.author_name}
+        {loading ? (
+          <div className="text-center py-12">
+            <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-gray-600 font-body">Loading news...</p>
+          </div>
+        ) : displayNews.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-600 font-body">No news available at the moment.</p>
+          </div>
+        ) : (
+          <>
+            {/* Horizontal Scrollable Cards on Mobile, Grid on Desktop */}
+            <div className="flex md:grid overflow-x-auto md:overflow-visible md:grid-cols-2 lg:grid-cols-3 gap-6 pb-6 md:pb-0 scroll-smooth snap-x snap-mandatory md:snap-none hide-scrollbar">
+              {displayNews.map((item) => (
+                // News Card
+                <div
+                  key={item.id}
+                  className="bg-white p-3.5 rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-100 flex flex-col shrink-0 md:shrink w-[320px] sm:w-[360px] md:w-auto snap-start md:snap-align-none"
+                >
+                  {/* Card Image */}
+                  {item.image_url && (
+                    <img
+                      src={item.image_url}
+                      alt={item.title}
+                      className="w-full h-52 object-cover rounded-md"
+                    />
+                  )}
+
+                  {/* Card Content */}
+                  <div className="pt-6 pl-3 flex flex-col flex-1">
+                    {/* Author Meta */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-2">
+                        <img
+                          src={item.author_avatar_url || 'https://placehold.co/40x40/E0E7FF/4F46E5?text=DR'}
+                          alt={item.author_name}
+                          className="w-10 h-10 rounded-full object-cover"
+                        />
+                        <span className="font-body font-normal text-gray-800 text-sm">
+                          By {item.author_name}
+                        </span>
+                      </div>
+                      <span className="font-body text-gray-500 text-sm">
+                        • {formatDate(item.created_at)}
                       </span>
                     </div>
-                    <span className="font-body text-gray-500 text-sm">
-                      • {formatDate(item.created_at)}
-                    </span>
-                  </div>
 
-                  {/* Title */}
-                  <h3 className="font-heading text-xl font-bold text-gray-900 mb-3 leading-snug">
-                    {item.title}
-                  </h3>
+                    {/* Title */}
+                    <h3 className="font-heading text-xl font-bold text-gray-900 mb-3 leading-snug">
+                      {item.title}
+                    </h3>
 
-                  {/* Excerpt */}
-                  <p className="font-body text-gray-500 text-sm mb-6 leading-relaxed">
-                    {item.excerpt}
-                  </p>
+                    {/* Excerpt */}
+                    <p className="font-body text-gray-500 text-sm mb-6 leading-relaxed">
+                      {item.excerpt}
+                    </p>
 
-                  {/* View Button */}
-                  <div className="mt-auto">
-                    <Link
-                      to={`/news/${item.id}`}
-                      className="
-                        inline-flex items-center gap-2
-                        font-body font-medium text-primary
-                        border-2 border-primary
-                        rounded-lg
-                        px-5 py-2.5
-                        text-m
-                        hover:bg-blue-50
-                        transition-all
-                      "
-                    >
-                      View <span aria-hidden="true">→</span>
-                    </Link>
+                    {/* View Button */}
+                    <div className="mt-auto">
+                      <Link
+                        to={`/news/${item.id}`}
+                        className="
+                          inline-flex items-center gap-2
+                          font-body font-medium text-primary
+                          border-2 border-primary
+                          rounded-lg
+                          px-5 py-2.5
+                          text-m
+                          hover:bg-primary
+                          transition-all
+                        "
+                      >
+                        View <span aria-hidden="true">→</span>
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))
-          )}
-          
-        </div>
+              ))}
+            </div>
+
+            {/* Custom Scrollbar Styles */}
+            <style jsx>{`
+              .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+              }
+              .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
+          </>
+        )}
         
       </div>
     </section>

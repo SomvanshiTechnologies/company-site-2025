@@ -59,7 +59,7 @@ const Technologies = () => {
   const duplicatedTechnologies = [...technologies, ...technologies, ...technologies];
 
   return (
-    <section className="py-16 sm:py-24 px-4  overflow-hidden">
+    <section className="py-16 sm:py-24 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <h2
           className="text-4xl md:text-3xl text-center mb-10 text-text"
@@ -85,12 +85,11 @@ const Technologies = () => {
             {duplicatedTechnologies.map((tech, index) => (
               <div
                 key={index}
-                className="shrink-0 mx-8 transition-transform duration-300 hover:scale-110"
+                className="shrink-0 mx-4 sm:mx-8 transition-transform duration-300 hover:scale-110"
                 title={tech.name}
               >
                 <tech.Icon
-                  className="transition-all duration-300"
-                  size={56}
+                  className="transition-all duration-300 w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14"
                   style={{ color: tech.color }}
                 />
               </div>
@@ -111,7 +110,7 @@ const Technologies = () => {
 
         .animate-scroll {
           display: flex;
-          animation: scroll 30s linear infinite;
+          animation: scroll 20s linear infinite;
         }
 
         .animate-scroll:hover {

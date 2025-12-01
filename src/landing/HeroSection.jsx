@@ -34,7 +34,7 @@ const HeroSection = () => {
 
             {/* Main Heading */}
             <motion.h1
-              className="font-gilroy font-extrabold text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight text-center lg:text-left"
+              className="font-gilroy font-black text-3xl md:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight text-center lg:text-left"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -59,7 +59,7 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <motion.div
-              className="mb-10 sm:mb-12 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 justify-center lg:justify-start"
+              className="mb-10 sm:mb-12 flex flex-col sm:flex-row sm:flex-wrap items-center gap-3 sm:gap-4 justify-center lg:justify-start"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -116,7 +116,7 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.4 }}
           >
             {/* Main Hero Image */}
-            <div className="relative bg-linear-to-br from-primary/10 to-primary/0 rounded-2xl p-6 backdrop-blur-sm border border-primary/20">
+            <div className="relative bg-linear-to-br from-primary/10 to-primary/0 rounded-xl backdrop-blur-sm">
               <img
                 src={'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1600'}
                 alt="Modern IT office with developers working on intelligent systems"

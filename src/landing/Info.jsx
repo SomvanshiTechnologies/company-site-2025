@@ -53,7 +53,7 @@ const Info = () => {
           </div>
 
           {/* --- Right Column: Image --- */}
-          <div className="flex items-center justify-center group relative overflow-hidden rounded-lg">
+          <div className="hidden lg:flex items-center justify-center group relative overflow-hidden rounded-lg">
             <div className="relative w-30px h-full">
               <img
                 src={infoimage}
