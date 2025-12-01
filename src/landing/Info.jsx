@@ -24,7 +24,7 @@ const Info = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[60%_35%] gap-10 items-stretch">
           {/* --- Left Column: Text Content --- */}
           {/* The content box with the very pale lavender/pink background */}
-          <div className="bg-gradient-soft p-4.5 sm:p-12 lg:p-16 rounded-lg shadow-sm flex flex-col justify-between">
+          <div className="bg-gradient-soft p-4.5 sm:p-12 lg:p-16 rounded-lg  flex flex-col justify-between">
             <div>
               {/* Text Block 1 */}
               <p className="text-sm leading-8 text-gray-900">
@@ -45,7 +45,7 @@ const Info = () => {
             <div className="mt-2">
               <a
                 href="about"
-                className="inline-block rounded-lg border-2 border-blue-500 px-8 py-3 text-sm font-semibold text-blue-500 hover:bg-blue-50 transition-colors"
+                className="inline-block rounded-lg border-2 border-primary px-8 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-white"
               >
                 Learn more <span aria-hidden="true">→</span>
               </a>
@@ -58,10 +58,9 @@ const Info = () => {
               <img
                 src={infoimage}
                 alt="Abstract 3D graphic with vibrant blue and purple flowing ribbons"
-                className="w-30px h-full object-cover rounded-lg transform transition-all duration-500 ease-in-out group-hover:scale-110 group-hover:rotate-2 shadow-md group-hover:shadow-2xl"
+                className="w-30px h-full object-cover rounded-lg"
               />
               {/* Overlay effect on hover */}
-              <div className="absolute inset-0 bg-linear-to-tr from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg"></div>
             </div>
           </div>
 

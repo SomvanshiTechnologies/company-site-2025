@@ -33,7 +33,7 @@ const Navbar = () => {
       ],
     },*/},
     
-    { name: "Solutions", href: "/technologies" },
+    { name: "Solutions", href: "/solutions" },
 
     {
       name: "Industries", 

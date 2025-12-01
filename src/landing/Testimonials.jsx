@@ -191,15 +191,14 @@ const Testimonials = () => {
                 <button
                   onClick={handlePrevious}
                   aria-label="Previous testimonial"
-                  className="w-10 h-8 sm:w-12 sm:h-9 flex items-center justify-center rounded-md border border-blue-200 text-blue-400 hover:bg-blue-50 transition-colors"
+                  className="w-10 h-8 sm:w-12 sm:h-9 flex items-center justify-center rounded-md border text-primary hover:bg-primary hover:text-white transition-colors"
                 >
                   <FaChevronLeft className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 </button>
                 <button
                   onClick={handleNext}
                   aria-label="Next testimonial"
-                  className="w-10 h-8 sm:w-12 sm:h-9 flex items-center justify-center rounded-md border border-blue-200 text-blue-400 hover:bg-blue-50 transition-colors"
-                >
+                  className="w-10 h-8 sm:w-12 sm:h-9 flex items-center justify-center rounded-md border text-primary hover:bg-primary hover:text-white transition-colors">
                   <FaChevronRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 </button>
               </div>

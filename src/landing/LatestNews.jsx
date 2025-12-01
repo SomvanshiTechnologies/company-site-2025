@@ -88,7 +88,7 @@ const LatestNews = () => {
                 // News Card
                 <div
                   key={item.id}
-                  className="bg-white p-3.5 rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-100 flex flex-col shrink-0 md:shrink w-[320px] sm:w-[360px] md:w-auto snap-start md:snap-align-none"
+                  className="bg-white p-3.5 rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden flex flex-col shrink-0 md:shrink w-[320px] sm:w-[360px] md:w-auto snap-start md:snap-align-none"
                 >
                   {/* Card Image */}
                   {item.image_url && (
@@ -139,7 +139,7 @@ const LatestNews = () => {
                           rounded-lg
                           px-5 py-2.5
                           text-m
-                          hover:bg-primary
+                          hover:bg-primary hover:text-white
                           transition-all
                         "
                       >

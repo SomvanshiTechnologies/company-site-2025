@@ -70,7 +70,7 @@ const HeroSection = () => {
               >
                 <Link
                   to="/solutions"
-                  className="rounded-lg border-2 border-primary px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-primary hover:bg-blue-50 transition-all duration-300 text-center inline-flex items-center justify-center gap-2"
+                  className="rounded-lg border-2 border-primary px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-primary hover:bg-primary hover:text-white transition-colors inline-flex items-center justify-center gap-2"
                 >
                   Explore our solutions
                 </Link>
