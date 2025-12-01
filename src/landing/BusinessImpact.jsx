@@ -7,14 +7,17 @@ const impactData = [
   {
     title: 'Ways AI is Transforming Customer Support',
     description: 'With our conversational AI platform, clients reduced response time by 60% while improving customer satisfaction scores. Our intelligent chatbots handle thousands of queries simultaneously, providing instant, accurate responses 24/7. This transformation has led to increased customer retention and significant cost savings in support operations.',
+    link: '#'
   },
   {
     title: 'AI-Driven Process Automation for Business Efficiency',
     description: 'Somvanshi\'s AI automation suite helped clients eliminate repetitive manual tasks, cutting operational costs by up to 40%. From document processing to workflow optimization, our solutions streamline operations and free up valuable human resources for strategic initiatives. Companies report improved accuracy and faster turnaround times across all automated processes.',
+    link: '#'
   },
   {
     title: 'Predictive Analytics for Data-Driven Decision Making',
     description: 'Our advanced predictive analytics tools empower businesses to make informed decisions based on real-time data insights. Clients have experienced up to 35% improvement in forecasting accuracy, enabling better inventory management, resource allocation, and strategic planning. Transform your raw data into actionable intelligence that drives growth.',
+    link: '#'
   }
 ];
 
@@ -64,58 +67,47 @@ const BusinessImpact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
           {/* --- Left Column: Text Content --- */}
-          <div className="bg-gradient-soft p-8 sm:p-10 lg:p-12 rounded-lg shadow-lg">
+          <div className="bg-gradient-soft p-8 sm:p-10 lg:p-12 rounded-lg">
 
             {/* Section Header */}
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold mb-6">
-              <span className="text-primary">Business</span>
-              <span className="text-text"> Impact and </span>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold mb-10 sm:mb-12">
+              <span className="text-primary">Businesss Impact</span>
+              <span className="text-text"> and </span>
               <span className="text-primary">Growth</span>
               <span className="text-text"> of clients</span>
             </h2>
 
-            {/* Accordions */}
-            <div className="space-y-4">
+            {/* Plain Text Items with Check Buttons */}
+            <div className="space-y-0">
               {impactData.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="border border-gray-300/50 rounded-lg overflow-hidden bg-white/50 backdrop-blur-sm"
-                  onMouseEnter={() => setExpandedIndex(index)}
-                  initial={false}
-                >
-                  {/* Accordion Header */}
-                  <div className="p-4 cursor-pointer">
-                    <h3 className="font-heading text-lg sm:text-xl font-semibold text-text">
+                <div key={index}>
+                  {/* Item Content */}
+                  <div className="py-6">
+                    <h3 className="font-heading text-lg sm:text-xl font-semibold text-gray-900 mb-3">
                       {item.title}
                     </h3>
+                    <p className="font-body text-gray-600 text-sm sm:text-base leading-relaxed mb-4 line-clamp-2">
+                      {item.description}
+                    </p>
+                    {/* Check Button */}
+                    <a
+                      href={item.link}
+                      className="inline-block font-body text-primary hover:underline text-sm sm:text-base"
+                    >
+                      Check
+                    </a>
                   </div>
-
-                  {/* Accordion Content */}
-                  <motion.div
-                    initial={false}
-                    animate={{
-                      height: expandedIndex === index ? "auto" : 0,
-                      opacity: expandedIndex === index ? 1 : 0
-                    }}
-                    transition={{
-                      height: { duration: 0.4, ease: "easeInOut" },
-                      opacity: { duration: 0.3, ease: "easeInOut" }
-                    }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-4 pb-4">
-                      <p className="font-body text-gray-600">
-                        {item.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                </motion.div>
+                  {/* Separator Line (except after last item) */}
+                  {index < impactData.length - 1 && (
+                    <hr className="border-t border-gray-300" />
+                  )}
+                </div>
               ))}
             </div>
           </div>
 
-          {/* --- Right Column: Rocket Launch Animation --- */}
-          <div className="relative flex items-center justify-center min-h-[680px] overflow-hidden rounded-lg shadow-lg">
+          {/* --- Right Column: Rocket Launch Animation (Hidden on Mobile) --- */}
+          <div className="hidden lg:flex relative items-center justify-center min-h-[680px] overflow-hidden rounded-lg shadow-lg">
             {/* Background Image - Static */}
             <div
               className="absolute inset-0 w-full h-full"

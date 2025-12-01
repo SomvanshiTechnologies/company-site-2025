@@ -111,12 +111,12 @@ const LatestTrends = () => {
         <div className="hidden lg:grid lg:grid-cols-3 gap-8">
           {/* Large Cards */}
           {largeCards.map((card) => (
-            <Link key={card.id} to={`/trends/${card.id}`} className="p-2 text-primary hover:opacity-80">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 p-3 hover:shadow-lg transition-shadow h-full flex flex-col">
+            <Link key={card.id} to={`/trends/${card.id}`}>
+              <div className="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
               {card.image_url && (
-                <img src={card.image_url} alt={card.title} className="w-full h-48 object-cover border rounded" />
+                <img src={card.image_url} alt={card.title} className="w-full h-48 object-cover rounded" />
               )}
-              <div className="pr-3.5 mt-4 flex-1 flex flex-col">
+              <div className="pr-3.5 p-5 mt-4 flex-1 flex flex-col">
                 <p className="font-body text-sm text-gray-500 mb-2">
                  <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
                 </p>
@@ -136,7 +136,7 @@ const LatestTrends = () => {
           <div className="flex flex-col gap-4 h-full">
             {smallCards.map((card) => (
               <Link key={card.id} to={`/trends/${card.id}`} className="flex-1">
-                <div className="bg-gradient-soft p-4 rounded-lg shadow-md border border-gray-200 h-full flex flex-col hover:shadow-lg transition-shadow">
+                <div className="bg-gradient-soft p-4 rounded-lg  h-full flex flex-col">
                   <p className="font-body text-sm text-gray-500 mb-2">
                     <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
                   </p>
@@ -164,11 +164,11 @@ const LatestTrends = () => {
               <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory">
                 {largeCards.map((card) => (
                   <Link key={card.id} to={`/trends/${card.id}`} className="shrink-0 w-[85%] sm:w-[70%] snap-start">
-                    <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 p-3 hover:shadow-lg transition-shadow h-full">
+                    <div className="bg-white rounded-lg shadow-md overflow-hidden h-full">
                       {card.image_url && (
-                        <img src={card.image_url} alt={card.title} className="w-full h-48 object-cover border rounded" />
+                        <img src={card.image_url} alt={card.title} className="w-full h-48 object-cover rounded" />
                       )}
-                      <div className="pr-3.5 mt-4">
+                      <div className="pr-3.5 p-3 mt-4">
                         <p className="font-body text-sm text-gray-500 mb-2">
                           <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
                         </p>
@@ -194,7 +194,7 @@ const LatestTrends = () => {
               <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory">
                 {smallCards.map((card) => (
                   <Link key={card.id} to={`/trends/${card.id}`} className="shrink-0 w-[85%] sm:w-[70%] snap-start">
-                    <div className="bg-gradient-soft p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow h-full">
+                    <div className="bg-gradient-soft p-4 rounded-lg  h-full">
                       <p className="font-body text-sm text-gray-500 mb-2">
                         <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
                       </p>
@@ -219,7 +219,7 @@ const LatestTrends = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center mt-6 gap-4">
           {/* Pagination - Hidden on mobile */}
           <div className="hidden lg:flex gap-1">
-            <button
+            {/* <button
               aria-label="Previous"
               className="w-12 h-9 flex items-center justify-center rounded-md border border-blue-200  text-blue-800 hover:bg-blue-50"
             >
@@ -230,7 +230,7 @@ const LatestTrends = () => {
               className="w-12 h-9 flex items-center justify-center rounded-md border border-blue-200  text-blue-800 hover:bg-blue-50"
             >
               <FaAngleRight className="text-primary w-3 h-3" />
-            </button>
+            </button> */}
           </div>
 
           {/* Explore Link */}

@@ -161,7 +161,7 @@ const Solutions = () => {
                 key={tab.name}
                 ref={(el) => (tabRefs.current[index] = el)}
                 onClick={() => handleTabClick(index)}
-                className={`relative pb-3 transition-all duration-300 ease-in-out whitespace-nowrap flex-shrink-0 ${
+                className={`relative pb-3 transition-all duration-300 ease-in-out whitespace-nowrap shrink-0 ${
                   activeTab === index ? "text-blue-900" : "text-gray-700"
                 }`}
                 style={{

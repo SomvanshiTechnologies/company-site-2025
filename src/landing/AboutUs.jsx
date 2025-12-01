@@ -12,9 +12,41 @@ const CustomStyles = () => (
           transform: translateY(-12px);
         }
       }
-      
+
       .animate-bob {
         animation: bob 5s ease-in-out infinite;
+      }
+
+      @keyframes rotate-gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .animated-gradient-ring {
+        background: linear-gradient(
+          90deg,
+          #7C3AED,
+          #A855F7,
+          #C084FC,
+          #E9D5FF,
+          #C084FC,
+          #A855F7,
+          #7C3AED
+        );
+        background-size: 200% 200%;
+        animation: rotate-gradient 4s ease infinite;
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
       }
     `}
   </style>
@@ -23,6 +55,97 @@ const CustomStyles = () => (
 
 const AboutUs = () => {
  return (
+  <div className="relative overflow-x-hidden">
+      
+        {/* --- Top Section: "We design systems..." --- */}
+        <section className="relative bg-gradient-soft pt-20 sm:pt-32 md:pt-40 pb-24 sm:pb-32 md:pb-40 overflow-hidden">
+          {/* Main content container */}
+          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="max-w-2xl">
+              {/* Headline */}
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
+                We design systems that learn, adapt, and evolve with you.
+              </h2>
+
+              {/* Sub-headline */}
+              <p className="mt-6 font-body text-base sm:text-lg leading-relaxed text-gray-600">
+                From healthcare startups to e-commerce platforms, we serve businesses across industries.
+              </p>
+
+              {/* CTA Button */}
+              <div className="mt-8 sm:mt-10">
+                <a
+                  href="#"
+                  className="
+                    inline-block
+                    font-body font-medium text-primary
+                    border-2 border-primary
+                    rounded-lg
+                    px-6 py-3
+                    text-sm sm:text-base
+                    hover:bg-primary/5
+                    transition-colors
+                  "
+                >
+                  Start your project <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* --- Animated Semicircular Rings --- */}
+          <div
+            aria-hidden="true"
+            className="absolute bottom-0 right-0 z-0 pointer-events-none"
+          >
+            {/* Ring 1 - Large */}
+            <div
+              className="
+                absolute
+                bottom-0
+                right-[180px]
+                sm:right-[200px]
+                md:right-[220px]
+                lg:right-[240px]
+                w-[400px] h-[280px]
+                sm:w-[480px] sm:h-[320px]
+                md:w-[560px] md:h-[360px]
+                lg:w-[640px] lg:h-[400px]
+                rounded-full
+                animated-gradient-ring
+                translate-y-1/2
+                animate-bob
+              "
+              style={{
+                animationDelay: '0s',
+                padding: '20px'
+              }}
+            />
+            {/* Ring 2 - Small */}
+            <div
+              className="
+                absolute
+                bottom-[-20px]
+                sm:bottom-[-30px]
+                md:bottom-[-40px]
+                right-0
+                w-[200px] h-[200px]
+                sm:w-[240px] sm:h-[240px]
+                md:w-[280px] md:h-[280px]
+                lg:w-[320px] lg:h-[320px]
+                rounded-full
+                animated-gradient-ring
+                translate-y-1/2
+                animate-bob
+              "
+              style={{
+                animationDelay: '1.5s',
+                padding: '16px'
+              }}
+            />
+          </div>
+        </section>
+
     <section className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-6">
       
       {/* Header Section */}
@@ -90,6 +213,7 @@ const AboutUs = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 
