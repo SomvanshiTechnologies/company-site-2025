@@ -1,6 +1,7 @@
 // AISolutionsIntro.jsx
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import magicIcon from '../assets/solutions/magic-icon.svg';
 
 const cards = [
   {
@@ -37,7 +38,7 @@ const AISolutionsIntro = () => {
           >
             <div className="mb-6">
               <img
-                src="/icons/magic-icon.svg"
+                src={magicIcon}
                 alt="AI Icon"
                 className="w-10 h-10"
               />
