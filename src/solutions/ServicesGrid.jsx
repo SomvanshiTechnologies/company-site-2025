@@ -1,5 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import Herodashboard from '../assets/solutions/hero-dashboard.png';
+
 
 function ServicesGrid() {
   const services = [
@@ -42,7 +44,7 @@ function ServicesGrid() {
         {/* HERO IMAGE */}
         <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/images/hero-dashboard.png"
+            src={Herodashboard}
             alt="dashboard"
             className="w-full h-full object-cover"
           />
