@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { supabase } from "../config/supabase";
 import { Bold } from "lucide-react";
 
+
 const Solutions = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);

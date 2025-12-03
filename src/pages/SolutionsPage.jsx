@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -16,51 +16,59 @@ import Testimonials from '../solutions/Testimonials';
 import ClientLogos from '../solutions/ClientLogos';
 import ContactForm from '../solutions/ContactForm';
 
-
 const SolutionsPage = () => {
-  return (
-        <div Name="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-gray-50 via-white to-gray-50">
 
+  const refAI = useRef(null);
+  const refProduct = useRef(null);
+  const refRPA = useRef(null);
+  const refTransform = useRef(null);
+  const refCloud = useRef(null);
+
+  const scrollToSection = (index) => {
+    const refs = [refAI, refProduct, refRPA, refTransform, refCloud];
+    if (refs[index]?.current) {
+      refs[index].current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  return (
+    <div className="relative items-center justify-center min-h-screen bg-linear-to-br from-gray-50 via-white to-gray-50">
       <Navbar />
 
-      <main className="flex-grow w-full">
-        {/* 1. Main Hero Section */}
+      <main className="w-full">
+        {/* HERO */}
         <HeroSection />
-        
-        {/* 2. Category List (Pocket Engineering, AI Solutions, etc.) */}
-        <SolutionCategories />
-        
-        {/* 3. Introduction to AI Solutions */}
-        <AISolutionsIntro />
-        
-        {/* 4. Grid of specific services (Chatbot, Voice Agent, etc.) */}
-        <ServicesGrid />
-        
-        {/* 5. Process Steps (01, 02, 03...) */}
-        <ProcessSteps />
-        
-        {/* 6. Feature Showcase (Intelligent Doc Processing, etc.) */}
-        <FeatureShowcase />
-        
-        {/* 7. Call To Action Banner */}
-        <CallToAction />
-        
-        {/* 8. Agentic AI and other solution cards */}
+
+        {/* CATEGORY TABS */}
+        <SolutionCategories scrollToSection={scrollToSection} />
+
+        {/* SECTIONS */}
+        <div ref={refAI}>
+          <AISolutionsIntro />
+        </div>
+
+        <div ref={refProduct}>
+          <ServicesGrid />
+        </div>
+
+        <div ref={refRPA}>
+          <ProcessSteps />
+        </div>
+
+        <div ref={refTransform}>
+          <FeatureShowcase />
+        </div>
+
+        <div ref={refCloud}>
+          <CallToAction />
+        </div>
+
+        {/* STATIC SECTIONS */}
         <AgenticSolutions />
-        
-        {/* 9. Trust Indicators (Security, Cloud, Support) */}
         <TrustIndicators />
-        
-        {/* 10. Latest Trends and Insights */}
-        <InsightsSection />
-        
-        {/* 11. Client Testimonials */}
-        <Testimonials />
-        
-        {/* 12. Client Logo Strip */}
+        <InsightsSection />        
         <ClientLogos />
-        
-        {/* 13. Contact Form */}
+        <Testimonials />
         <ContactForm />
       </main>
 
