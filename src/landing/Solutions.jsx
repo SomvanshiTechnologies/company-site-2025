@@ -179,7 +179,7 @@ const Solutions = () => {
 
           {/* Active tab indicator (short blue bar) */}
           <span
-            className="absolute bottom-0 h-[3px] bg-blue-600 transition-[left,width] duration-500 ease-in-out"
+            className="absolute bottom-0 h-[3px] bg-primary transition-[left,width] duration-500 ease-in-out"
             style={{
               left: `${indicatorStyle.left}px`,
               width: `${indicatorStyle.width}px`,
