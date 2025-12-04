@@ -69,17 +69,7 @@ const AISolutionsIntro = () => {
         >
           Contact for Service <ArrowRight size={18} />
         </button>
-      </div>
-
-      {/* SCROLL UP */}
-      <button
-        className="absolute bottom-10 right-3 w-10 h-10 rounded-full 
-        border border-blue-800 text-primary bg-white shadow-md hover:shadow-lg transition
-  "
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      >
-        ↑
-      </button>
+      </div>      
     </section>
   );
 };

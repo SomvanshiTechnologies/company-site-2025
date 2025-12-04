@@ -117,7 +117,7 @@ const Solutions = () => {
 
   if (loading) {
     return (
-      <section className="bg-white py-16 sm:py-24">
+      <section className="min-h-screen w-full bg-white py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center py-12">
             <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
