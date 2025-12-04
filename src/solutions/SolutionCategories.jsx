@@ -43,7 +43,7 @@ const SolutionCategories = ({ scrollToSection }) => {
     <section className="bg-white w-full pb-10">
 
       {/* ====================== TABS ====================== */}
-      <div className="sticky top-20 w-full sm:w-[70%] mt-10 ml-20 relative overflow-hidden">
+      <div className="w-full sm:w-[70%] mt-10 ml-20 relative overflow-hidden">
           {/* Full light blue bottom line */}
           <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-100"></div>
 

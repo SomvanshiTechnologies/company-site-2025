@@ -10,7 +10,7 @@ const featureTags = [
 
 const Info = () => {
   return (
-    <div className=" bg-gray-80 py-16 sm:py-20">
+    <div className=" bg-white py-16 sm:py-20">
       
       {/* Centering and padding container */}
       <div className="max-w-8xl mx-auto px-6 lg:px-8">

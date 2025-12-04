@@ -17,8 +17,7 @@ const HeroSection = () => {
 <section className="relative w-full h-[70vh] overflow-hidden mt-[70px]">
 
   {/* -------- SLIDE 1 -------- */}
-  <div
-  className={`absolute inset-0 transition-opacity duration-700 ease-in-out
+  <div className={`absolute inset-0 transition-opacity duration-700 ease-in-out
   ${current === 0 ? "opacity-100" : "opacity-0"}`}
 >
 
@@ -37,7 +36,7 @@ const HeroSection = () => {
       make faster decisions, and deliver exceptional experiences.
     </p>
 
-    <button className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 w-30 text-[10px]">
+    <button className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 text-[15px] w-max">
       Start Project →
     </button>
   </div>
@@ -52,9 +51,9 @@ const HeroSection = () => {
   }`}
 >
   {/* Left Text Section */}
-  <div className="w-1/2 flex flex-col justify-center pl-20 pr-8 text-[#0F172A]">
-    <h1 className="text-[20px] font-bold leading-tight">Conversational AI That Cares</h1>
-    <p className="mt-4 text-[10px] leading-relaxed max-w-md">
+  <div className="w-1/2 flex flex-col ml-auto justify-center pl-20 pr-8 text-[#0F172A]">
+    <h1 className="text-[26px] xl:text-[28px] font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8A2BE2] to-[#4FA7FF] whitespace-nowrap w-max">Conversational AI That Cares</h1>
+    <p className="mt-4 text-[15px] leading-relaxed max-w-md">
       Enable 24/7 patient engagement through voice chat, and predictive care
       assistants reducing wait times and improving satisfaction.
     </p>
@@ -65,7 +64,7 @@ const HeroSection = () => {
 
   {/* Right Image Section */}
   <div className="w-1/2 h-full">
-    <img src={slide1Img} className="w-full h-full object-cover" />
+    <img src={slide1Img} className="w-[65%] ml-auto h-full object-cover" />
   </div>
 </div>
 
@@ -77,9 +76,9 @@ const HeroSection = () => {
   }`}
 >
   {/* Left Text Section */}
-  <div className="w-1/2 flex flex-col justify-center pl-20 pr-8 text-[#0F172A]">
-    <h1 className="text-[20px] font-bold leading-tight">AI in Navigating & Wayfinding</h1>
-    <p className="mt-4 text-[10px] leading-relaxed max-w-md">
+  <div className="w-1/2 flex flex-col ml-auto justify-center pl-20 pr-8 text-[#0F172A]">
+    <h1 className="text-[26px] xl:text-[28px] font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8A2BE2] to-[#4FA7FF] whitespace-nowrap w-max">AI in Navigating & Wayfinding</h1>
+    <p className="mt-4 text-[15px] leading-relaxed max-w-md">
         Simplify patient journeys with intelligent indoor wayfinding guiding visitors with ease.
       </p>
       <button className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 text-[15px] w-max">
@@ -87,8 +86,8 @@ const HeroSection = () => {
     </button>
     </div>
 
-  <div className="w-1/2 h-full">
-      <img src={slideImg2} className="w-full h-full object-cover" />
+    <div className="w-1/2 h-full">
+      <img src={slideImg2} className="w-[65%] ml-auto h-full object-cover" />
     </div>
   </div> 
  

@@ -9,7 +9,7 @@ import ServicesGrid from '../solutions/ServicesGrid';
 import ProcessSteps from '../solutions/ProcessSteps';
 import FeatureShowcase from '../solutions/FeatureShowcase';
 import CallToAction from '../solutions/CallToAction';
-import AgenticSolutions from '../solutions/AgenticSolutions';
+import CloudSolutions from '../solutions/CloudSolutions';
 import TrustIndicators from '../solutions/TrustIndicators';
 import InsightsSection from '../solutions/InsightsSection';
 import Testimonials from '../solutions/Testimonials';
@@ -56,15 +56,14 @@ const SolutionsPage = () => {
         </div>
 
         <div ref={refTransform}>
-          <FeatureShowcase />
-        </div>
-
-        <div ref={refCloud}>
           <CallToAction />
         </div>
 
+        <div ref={refCloud}>
+          <CloudSolutions />
+        </div>
+
         {/* STATIC SECTIONS */}
-        <AgenticSolutions />
         <TrustIndicators />
         <InsightsSection />        
         <ClientLogos />
