@@ -27,11 +27,11 @@ export default function CallToAction() {
         
         {/* LEFT CONTENT */}
         <div className="ml-0 lg:ml-[-30px] order-1 lg:order-1">
-          <h1 className="text-[56px] md:text-[54px] lg:text-[72px] leading-tight font-extrabold text-[#1B2744]">
+          <h1 className="text-[66px] md:text-[54px] lg:text-[72px] leading-tight font-extrabold text-[#1B2744]">
             Agentic <span className="text-[#3D86E6]">AI</span>
           </h1>
 
-          <p className="text-[#56607A] mt-6 text-[17px] md:text-[15px] max-w-sm leading-relaxed">
+          <p className="text-[#56607A] mt-6 text-[17px] md:text-[18px] max-w-sm leading-relaxed">
             Automate repetitive tasks, optimize workflows, and enhance operational
             efficiency with enterprise-grade RPA solutions.
           </p>
