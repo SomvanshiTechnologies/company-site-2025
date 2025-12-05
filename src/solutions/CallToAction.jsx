@@ -9,9 +9,9 @@ import purpleRing from "../assets/Small.svg";
 export default function CallToAction() {
   return (
     <section className="w-full bg-gradient-to-b from-[#F6F8FF] to-[#FBF6FB] py-24 px-6 md:px-12 lg:px-20 relative overflow-hidden">
-<div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-start">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-start">
         {/* LEFT: Title / Copy */}
-        <div className="order-1 lg:order-1">
+        <div className="ml-0 lg:ml-[-30px] order-1 lg:order-1">
           <h1 className="text-[56px] md:text-[64px] lg:text-[72px] leading-tight font-extrabold text-[#1B2744]">
             Agentic <span className="text-[#3D86E6]">AI</span>
           </h1>
@@ -31,12 +31,12 @@ export default function CallToAction() {
 
         {/* RIGHT: 3 Cards */}
         <div className="order-2 lg:order-2">
-          <div className="flex flex-wrap gap-5">
+          <div className="flex flex-wrap gap-7 ml-10 ">
             {[1, 2, 3].map((n) => (
               <div
                 key={n}
                 className="relative rounded-xl overflow-hidden shadow-[0_6px_18px_rgba(26,32,64,0.06)]"
-      style={{ minHeight: "340px", flex: "1 1 30%" }}
+                style={{ minHeight: "340px", flex: "1 1 30%" }}
               >
                 {/* image (cover) */}
                 <img
@@ -48,9 +48,8 @@ export default function CallToAction() {
 
                 {/* dark overlay for the look  */}
                 <div className="absolute inset-0 bg-[rgba(21,30,57,0.42)] pointer-events-none" />
-      <div className="absolute top-4 left-4 right-4 z-10 flex items-center justify-between text-white">
-        <span className="text-[15px] font-medium">Some Solution</span>
-        <ChevronDown className="w-5 h-5" />
+                <div className="absolute top-4 left-4 right-4 z-10 flex items-center justify-between text-white">
+                  <ChevronDown className="w-5 h-5" />
                 </div>
               </div>
             ))}

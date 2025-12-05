@@ -1,5 +1,5 @@
 import React from "react";
-import cloudImg from "../assets/solutions/hero-dashboard.png";  // replace with your image
+import cloudImg from "../assets/solutions/dashboard.gif";  // replace with your image
 import purpleRing from "../assets/Small.svg";   // optional
 
 export default function CloudSolutions() {

@@ -101,13 +101,13 @@ const InsightsSection = () => {
 
         {/* Section Header */}
         <div className="mb-12">
-          <h2 className="text-3xl sm:text-4xl font-heading font-semibold text-primary">
+          <h2 className="ml-0 lg:ml-[12px] text-3xl sm:text-4xl font-heading font-semibold text-primary">
             Latest Trends and Insights
           </h2>
         </div>
 
         {/* Content Grid - Desktop */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-8">
+        <div className="ml-0 lg:ml-[12px] hidden lg:grid lg:grid-cols-3 gap-8">
           {/* Large Cards */}
           {largeCards.map((card) => (
             <Link key={card.id} to={`/trends/${card.id}`}>

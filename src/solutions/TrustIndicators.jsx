@@ -24,7 +24,7 @@ export default function TrustIndicators() {
   return (
     <section className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
       {/* Heading */}
-      <div className="text-left mb-12">
+      <div className="ml-0 lg:ml-[-30px] text-left mb-12">
         <h2 className="text-[42px] md:text-[48px] font-extrabold text-[#1B2744] leading-tight">
           Why Businesses Trust
         </h2>
@@ -43,7 +43,7 @@ export default function TrustIndicators() {
               bg-gradient-to-br from-[#F7F9FE] via-[#FBF7FF] to-[#ECF8FF]
               p-10 rounded-xl shadow-sm cursor-pointer
               transition-all duration-300
-              hover:-translate-y-2 hover:shadow-xl
+              hover:-translate-y-1 hover:shadow-sm
             "
           >
             {/* Icon */}

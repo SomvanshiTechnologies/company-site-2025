@@ -33,7 +33,7 @@ const AISolutionsIntro = () => {
             className="
               p-8 rounded-xl cursor-pointer transition-all duration-300
               bg-gradient-to-br from-[#F0F8FF] via-[#F7F4FF] to-[#E6F6FF]
-              hover:shadow-xl hover:-translate-y-1
+              hover:shadow-sm hover:-translate-y-1
             "
           >
             <div className="mb-6">
@@ -52,9 +52,10 @@ const AISolutionsIntro = () => {
               {item.desc}
             </p>
 
-            <button className="flex items-center gap-2 text-[#3A76D2] font-medium text-[15px]">
+            <button className="flex items-center gap-2 text-[#3A76D2] font-medium text-[15px] hover:text-[#1C4FA1]">
               View More <ArrowRight size={16} />
-            </button>
+              </button>
+
           </div>
         ))}
       </div>
