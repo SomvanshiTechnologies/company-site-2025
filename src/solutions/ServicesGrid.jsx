@@ -18,7 +18,7 @@ export default function ServicesGrid() {
     <div className="w-full bg-gradient-to-br from-purple-600 to-indigo-700 p-10 text-white">
 
       {/* TOP HERO */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12">
         <div>
           <h2 className="text-4xl font-semibold mb-4">Product Engineering</h2>
           <p className="text-lg max-w-md mb-6 opacity-90">
@@ -35,12 +35,12 @@ export default function ServicesGrid() {
       </div>
 
       {/* EXPANDING CARD ROW */}
-      <div className="flex gap-2 overflow-hidden relative">
+      <div className="flex gap-4 overflow-hidden relative">
         {services.map((service, index) => {
           const isHovered = hovered === index;
 
           const collapsed = 280;
-          const expanded = 350;
+          const expanded = 400;
 
           return (
             <div
@@ -57,8 +57,8 @@ export default function ServicesGrid() {
               style={{ width: isHovered ? expanded : collapsed }}
             >
               {/* CARD BACKGROUND */}
-              <div className="p-2 rounded-xl border border-white/40 bg-white/5 h-full flex flex-col justify-between relative z-10">
-                <div className="w-30 pointer-events-none">
+              <div className="p-6 rounded-xl border border-white/40 bg-white/5 h-full flex flex-col justify-between relative z-10">
+                <div className="w-40 pointer-events-none">
                   <div className="text-2xl font-bold text-white/80 mb-4">
                     {service.id}
                   </div>
