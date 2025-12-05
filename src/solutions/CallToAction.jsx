@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import sampleImg from "../assets/solutions/automation.png";
 import purpleRing from "../assets/Small.svg";
@@ -20,6 +21,20 @@ export default function CallToAction() {
       desc: "Leverage real-time analytics to identify trends, optimize processes, and drive strategic business insights.",
     },
   ];
+
+  // Card entrance animation
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.15,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
+  };
 
   return (
     <section className="w-full bg-gradient-to-b from-[#F6F8FF] to-[#FBF6FB] py-24 px-6 md:px-12 lg:px-20 relative overflow-hidden">
@@ -47,21 +62,34 @@ export default function CallToAction() {
         <div className="order-2 lg:order-2 w-190">
           <div className="flex justify-between gap-6 ml-0">
             {cards.map((card, index) => (
-              <div
+              <motion.div
                 key={index}
+                custom={index}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0px 12px 25px rgba(61,134,230,0.25)",
+                  transition: { duration: 0.3 },
+                }}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className={`relative rounded-xl overflow-hidden shadow-[0_6px_18px_rgba(26,32,64,0.06)] cursor-pointer transition-all duration-200 flex-shrink-0 w-[30%] h-[340px] ${
+                className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 flex-shrink-0 w-[30%] h-[340px] ${
                   hoveredIndex === index ? "bg-white" : "bg-transparent"
                 }`}
               >
                 {/* Default state with image */}
                 {hoveredIndex !== index && (
                   <>
-                    <img
+                    <motion.img
                       src={sampleImg}
                       alt={card.title}
                       className="w-full h-full object-cover block"
+                      initial={{ scale: 1 }}
+                      whileHover={{ scale: 1.08 }}
+                      transition={{ duration: 0.4 }}
                     />
                     <div className="absolute inset-0 bg-[rgba(21,30,57,0.42)]"></div>
                     <div className="absolute top-6 left-5 right-6 text-white">
@@ -75,9 +103,14 @@ export default function CallToAction() {
                   </>
                 )}
 
-                {/* Hover state with white background */}
+                {/* Hover state */}
                 {hoveredIndex === index && (
-                  <div className="p-6 h-full flex flex-col justify-between text-[#1B2744]">
+                  <motion.div
+                    className="p-6 h-full flex flex-col justify-between text-[#1B2744]"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <div>
                       <div className="flex items-center justify-between">
                         <h3 className="text-[17px] font-semibold leading-snug">
@@ -89,9 +122,9 @@ export default function CallToAction() {
                         {card.desc}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
