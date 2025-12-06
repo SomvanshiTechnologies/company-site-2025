@@ -15,8 +15,7 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-br from-purple-600 to-indigo-700 p-10 text-white">
-
+    <div className="w-full bg-gradient-to-br from-purple-600 to-indigo-700 p-10 text-white overflow-hidden">
       {/* TOP HERO */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12">
         <div>
@@ -30,22 +29,21 @@ export default function ServicesGrid() {
         </div>
 
         <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-          <img src={heroSrc} className="w-full h-full object-cover" />
+          <img src={heroSrc} className="w-full h-full object-cover" alt="Hero" />
         </div>
       </div>
 
       {/* EXPANDING CARD ROW */}
-      <div className="flex gap-4 overflow-hidden relative">
+      <div className="flex flex-nowrap justify-center gap-6">
         {services.map((service, index) => {
           const isHovered = hovered === index;
-
-          const collapsed = 280;
-          const expanded = 400;
+          const collapsed = 260;
+          const expanded = 380;
 
           return (
             <div
               key={service.id}
-              className="relative flex-shrink-0 transition-all duration-300 ease-out cursor-pointer"
+              className="relative transition-all duration-300 ease-out cursor-pointer flex-shrink-0"
               onMouseEnter={() => {
                 setHovered(index);
                 setHeroSrc(service.hero);
@@ -54,35 +52,36 @@ export default function ServicesGrid() {
                 setHovered(null);
                 setHeroSrc(Herodashboard);
               }}
-              style={{ width: isHovered ? expanded : collapsed }}
+              style={{ width: isHovered ? expanded : collapsed, height: "210px" }}
             >
-              {/* CARD BACKGROUND */}
-              <div className="p-6 rounded-xl border border-white/40 bg-white/5 h-full flex flex-col justify-between relative z-10">
-                <div className="w-40 pointer-events-none">
-                  <div className="text-2xl font-bold text-white/80 mb-4">
-                    {service.id}
+              {/* CARD BODY */}
+              <div className="p-6 rounded-xl border border-white/30 bg-white/10 h-full flex items-center justify-between relative z-10 overflow-hidden">
+                
+                {/* LEFT TEXT SIDE */}
+                <div className="flex flex-col justify-between h-full w-full">
+                  <div>
+                    <div className="text-2xl font-bold text-white/80 mb-3">{service.id}</div>
+                    <h3 className="text-lg w-40 font-medium leading-snug">{service.title}</h3>
                   </div>
-                  <h3 className="text-xl font-medium leading-snug mb-4">
-                    {service.title}
-                  </h3>
+
+                  <button className="flex items-center gap-2 font-medium text-white/70 hover:text-white transition-all duration-300 mt-auto">
+                    View More
+                    <ArrowRight size={16} className="transition-transform duration-300 hover:translate-x-1" />
+                  </button>
                 </div>
 
-                <button className="flex items-center gap-2 font-medium text-white/70 hover:text-white transition-all duration-300 pointer-events-auto">
-                  View More
-                  <ArrowRight
-                    size={16}
-                    className="transition-transform duration-300 group-hover:translate-x-1 hover:translate-x-1"
+                {/* IMAGE - only visible on hover */}
+                <div
+                  className={`absolute right-6 top-1/2 -translate-y-1/2 w-40 h-28 rounded-lg overflow-hidden shadow-lg transition-all duration-500 ease-out
+                    ${isHovered ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 pointer-events-none"}
+                  `}
+                >
+                  <img
+                    src={service.thumb}
+                    className="w-full h-full object-cover object-center"
+                    alt={service.title}
                   />
-                </button>
-              </div>
-
-              {/* THUMB IMAGE */}
-              <div
-                className={`absolute right-3 top-1/2 -translate-y-1/2 w-44 h-32 rounded-lg overflow-hidden shadow-lg transition-all duration-300
-                  ${isHovered ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}
-                `}
-              >
-                <img src={service.thumb} className="w-full h-full object-cover" />
+                </div>
               </div>
             </div>
           );
