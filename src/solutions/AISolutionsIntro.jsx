@@ -82,7 +82,7 @@ const AISolutionsIntro = () => {
         <motion.button
           className="
             px-6 py-3 border border-primary rounded-lg text-primary
-            font-medium flex gap-2
+            font-medium flex gap-2 font-bold
           "
           whileHover={{ scale: 1.05, backgroundColor: "#3A76D2", color: "#fff" }}
           transition={{ type: "spring", stiffness: 300 }}

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import slide1Img from "../assets/solutions/ai-2.png";   
-import slideImg2 from "../assets/solutions/ai-3.png";      
-import wave from "../assets/solutions/wave.gif"; 
+import slide1Img from "../assets/solutions/ai-2.png";
+import slideImg2 from "../assets/solutions/ai-3.png";
+import wave from "../assets/solutions/wave.gif";
+import AnimatedBackground from "../ui/AnimatedBackground";
+import { motion } from "framer-motion";
+
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
@@ -14,85 +17,130 @@ const HeroSection = () => {
   }, []);
 
   return (
-<section className="relative w-full h-[70vh] overflow-hidden mt-[70px]">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-gray-50 via-white to-gray-50 mt-[70px]">
+      <AnimatedBackground />
 
-  {/* -------- SLIDE 1 -------- */}
-  <div className={`absolute inset-0 transition-opacity duration-700 ease-in-out
-  ${current === 0 ? "opacity-100" : "opacity-0"}`}
->
+      {/* -------- SLIDE 1 -------- */}
+      <div
+        className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${current === 0 ? "opacity-100" : "opacity-0"}`}
+      >
+        {/* BACKGROUND IMAGE FULL WIDTH */}
+        <img
+          src={wave}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40"></div>
 
-  {/* BACKGROUND IMAGE FULL WIDTH */}
-  <img src={wave} className="absolute inset-0 w-full h-full object-cover" />
-  <div className="absolute inset-0 bg-black/40"></div>
+        {/* TEXT OVERLAY */}
+        <div className="relative z-10 flex flex-col justify-center h-full pl-[60px] max-w-[520px]">
+      {/* Container Motion for Staggered Children */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.2, // each child animates 0.2s after previous
+            },
+          },
+        }}
+      >
+        {/* Heading */}
+        <motion.h1
+          className="text-[40px] font-semibold text-white leading-tight"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+          }}
+        >
+          Our Solutions
+        </motion.h1>
 
-  {/* TEXT OVERLAY */}
-  <div className="relative z-10 flex flex-col justify-center h-full pl-[60px] max-w-[520px]">
-    <h1 className="text-[40px] font-semibold text-white leading-tight">
-      Our Solutions
-    </h1>
+        {/* Paragraph */}
+        <motion.p
+          className="mt-4 text-white text-[15px] leading-relaxed"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+          }}
+        >
+          From automation to intelligence, our AI-driven solutions help
+          enterprises streamline processes, make faster decisions, and deliver
+          exceptional experiences.
+        </motion.p>
 
-    <p className="mt-4 text-white text-[15px] leading-relaxed">
-      From automation to intelligence, our AI-driven solutions help enterprises streamline processes,
-      make faster decisions, and deliver exceptional experiences.
-    </p>
-
-    <button className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 text-[15px] w-max">
-      Start Project →
-    </button>
-  </div>
-
-</div>
-
-
-  {/* -------- SLIDE 2 -------- */}
-  <div
-  className={`absolute inset-0 flex transition-opacity duration-700 ease-in-out ${
-    current === 1 ? "opacity-100" : "opacity-0"
-  }`}
->
-  {/* Left Text Section */}
-  <div className="w-1/2 flex flex-col ml-auto justify-center pl-20 pr-8 text-[#0F172A]">
-    <h1 className="text-[26px] xl:text-[28px] font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8A2BE2] to-[#4FA7FF] whitespace-nowrap w-max">Conversational AI That Cares</h1>
-    <p className="mt-4 text-[15px] leading-relaxed max-w-md">
-      Enable 24/7 patient engagement through voice chat, and predictive care
-      assistants reducing wait times and improving satisfaction.
-    </p>
-      <button className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 text-[15px] w-max">
-      Read more →
-    </button>
-  </div>
-
-  {/* Right Image Section */}
-  <div className="w-1/2 h-full">
-    <img src={slide1Img} className="w-[65%] ml-auto h-full object-cover" />
-  </div>
-</div>
-
-
-  {/* -------- SLIDE 3 -------- */}
-  <div
-  className={`absolute inset-0 flex transition-opacity duration-700 ease-in-out ${
-    current === 2 ? "opacity-100" : "opacity-0"
-  }`}
->
-  {/* Left Text Section */}
-  <div className="w-1/2 flex flex-col ml-auto justify-center pl-20 pr-8 text-[#0F172A]">
-    <h1 className="text-[26px] xl:text-[28px] font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8A2BE2] to-[#4FA7FF] whitespace-nowrap w-max">AI in Navigating & Wayfinding</h1>
-    <p className="mt-4 text-[15px] leading-relaxed max-w-md">
-        Simplify patient journeys with intelligent indoor wayfinding guiding visitors with ease.
-      </p>
-      <button className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 text-[15px] w-max">
-      Read more →
-    </button>
+        {/* Button */}
+        <motion.button
+          className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 text-[15px] w-max"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+          }}
+        >
+          Start Project →
+        </motion.button>
+      </motion.div>
     </div>
+      </div>
 
-    <div className="w-1/2 h-full">
-      <img src={slideImg2} className="w-[65%] ml-auto h-full object-cover" />
-    </div>
-  </div> 
- 
+      {/* -------- SLIDE 2 -------- */}
+      <div
+        className={`absolute inset-0 flex transition-opacity duration-700 ease-in-out ${
+          current === 1 ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {/* Left Text Section */}
+        <div className="w-1/2 flex flex-col ml-auto justify-center pl-20 pr-8 text-[#0F172A]">
+          <h1 className="text-[26px] xl:text-[28px] font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8A2BE2] to-[#4FA7FF] whitespace-nowrap w-max">
+            Conversational AI That Cares
+          </h1>
+          <p className="mt-4 text-[15px] leading-relaxed max-w-md">
+            Enable 24/7 patient engagement through voice chat, and predictive
+            care assistants reducing wait times and improving satisfaction.
+          </p>
+          <button className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 text-[15px] w-max">
+            Read more →
+          </button>
+        </div>
 
-</section>
+        {/* Right Image Section */}
+        <div className="w-1/2 h-full">
+          <img
+            src={slide1Img}
+            className="w-[65%] ml-auto h-full object-cover"
+          />
+        </div>
+      </div>
+
+      {/* -------- SLIDE 3 -------- */}
+      <div
+        className={`absolute inset-0 flex transition-opacity duration-700 ease-in-out ${
+          current === 2 ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {/* Left Text Section */}
+        <div className="w-1/2 flex flex-col ml-auto justify-center pl-20 pr-8 text-[#0F172A]">
+          <h1 className="text-[26px] xl:text-[28px] font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8A2BE2] to-[#4FA7FF] whitespace-nowrap w-max">
+            AI in Navigating & Wayfinding
+          </h1>
+          <p className="mt-4 text-[15px] leading-relaxed max-w-md">
+            Simplify patient journeys with intelligent indoor wayfinding guiding
+            visitors with ease.
+          </p>
+          <button className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 text-[15px] w-max">
+            Read more →
+          </button>
+        </div>
+
+        <div className="w-1/2 h-full">
+          <img
+            src={slideImg2}
+            className="w-[65%] ml-auto h-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 
