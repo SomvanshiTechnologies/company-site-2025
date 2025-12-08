@@ -11,6 +11,7 @@ import ManagePage from "./admin/ManagePage";
 import ProtectedRoute from "./admin/components/ProtectedRoute";
 import Contact from "./ui/contact";
 import WhatsAppButton from "./ui/WhatsAppButton";
+import IndustiresPage from "./pages/IndustiresPage";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/about" element={<div>About Us Page</div>} />
           <Route path="/contact" element={<Contact/>} />
+          <Route path="/industries" element={<IndustiresPage/>} />
 
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />

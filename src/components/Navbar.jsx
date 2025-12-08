@@ -34,18 +34,19 @@ const Navbar = () => {
     },*/},
     
     { name: "Solutions", href: "/solutions" },
+    { name: "Industries", href: "/industries" },
 
-    {
-      name: "Industries", 
-      href: "#",
-      dropdown: [
-        { name: "Healthcare", href: "/industries/healthcare" },
-        { name: "Finance", href: "/industries/finance" },
-        { name: "E-commerce", href: "/industries/ecommerce" },
-        { name: "Education", href: "/industries/education" },
-        { name: "Manufacturing", href: "/industries/manufacturing" },
-      ],
-    },
+    // {
+    //   name: "Industries", 
+    //   href: "#",
+    //   dropdown: [
+    //     { name: "Healthcare", href: "/industries/healthcare" },
+    //     { name: "Finance", href: "/industries/finance" },
+    //     { name: "E-commerce", href: "/industries/ecommerce" },
+    //     { name: "Education", href: "/industries/education" },
+    //     { name: "Manufacturing", href: "/industries/manufacturing" },
+    //   ],
+    // },
     { name: "Insights", href: "/insights" },
     { name: "Company", href: "/about" },
   ];
