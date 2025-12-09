@@ -56,13 +56,13 @@ export default function SolutionCategories() {
                 className={`relative pb-2 text-sm font-medium whitespace-nowrap transition
                 ${
                   active === tab.label
-                    ? "text-blue-600"
+                    ? "text-primary"
                     : "text-gray-600 hover:text-black"
                 }`}
               >
                 {tab.label}
                 {active === tab.label && (
-                  <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-blue-600 rounded-full"></span>
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-primary rounded-full"></span>
                 )}
               </button>
             ))}
