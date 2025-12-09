@@ -4,7 +4,7 @@ import purpleRing from "../assets/Small.svg";   // optional
 
 export default function CloudSolutions() {
   return (
-    <section className="w-full bg-gradient-to-b from-[#F6F8FF] to-[#FBF6FB] py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+    <section id="cloudSolutions" className="w-full bg-gradient-to-b from-[#F6F8FF] to-[#FBF6FB] py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         

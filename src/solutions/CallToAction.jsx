@@ -32,7 +32,7 @@ export default function CallToAction() {
   };
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-[#F6F8FF] to-[#FBF6FB] py-24 px-6 md:px-12 lg:px-20 overflow-hidden">
+    <section id="aiTransformation" className="relative w-full bg-gradient-to-b from-[#F6F8FF] to-[#FBF6FB] py-24 px-6 md:px-12 lg:px-20 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-start">
         
         {/* LEFT SECTION */}

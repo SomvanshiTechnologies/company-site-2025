@@ -15,8 +15,7 @@ export default function ServicesGrid() {
   ];
 
   return (
-<div className="w-full bg-gradient-to-br from-[#7F3DFF] to-[#5C22FF]
- p-10 text-white overflow-hidden">
+<div id="pdEngg" className="w-full bg-gradient-to-br from-[#7F3DFF] to-[#5C22FF] p-10 text-white overflow-hidden">
       {/* TOP HERO */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12">
         <div>

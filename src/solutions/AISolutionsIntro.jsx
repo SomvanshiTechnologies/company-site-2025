@@ -34,7 +34,7 @@ const cardVariants = {
 
 const AISolutionsIntro = () => {
   return (
-    <section className="relative flex flex-col items-center justify-center px-4 sm:px-8 py-4 pb-8 bg-white">
+    <section id="aiSolutions" className="relative flex flex-col items-center justify-center px-4 sm:px-8 py-4 pb-8 bg-white">
       {/* GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         {cards.map((item, index) => (

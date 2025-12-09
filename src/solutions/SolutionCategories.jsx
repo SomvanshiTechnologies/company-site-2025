@@ -1,74 +1,53 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import aisolutions from '../assets/solutions/ai-solutions.png';
 
-const SolutionCategories = ({ scrollToSection }) => {
+export default function SolutionCategories() {
+  const tabs = [
+    { label: "AI Solutions", target: "aiSolutions" },
+    { label: "Product Engineering", target: "pdEngg" },
+    { label: "Robotics Process Automation", target: "rpAutomation" },
+    { label: "AI Transformation", target: "aiTransformation" },
+    { label: "Cloud Solutions", target: "cloudSolutions" },
+  ];
 
-  const [categories] = useState([
-    { id: 1, name: "AI Solutions" },
-    { id: 2, name: "Product Engineering" },
-    { id: 3, name: "Robotics Process Automation" },
-    { id: 4, name: "AI Transformation" },
-    { id: 5, name: "Cloud Solutions" },
-  ]);
+  const [active, setActive] = useState("AI Solutions");
 
-  // Placeholder for indicator (optional — can be removed if not needed)
-  const tabRefs = useRef([]);
-  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
-
-  useEffect(() => {
-    window.addEventListener("resize", () => updateIndicator(0));
-    return () => window.removeEventListener("resize", () => updateIndicator(0));
-  }, []);
-
-  const updateIndicator = (index) => {
-    const current = tabRefs.current[index];
-    if (current) {
-      setIndicatorStyle({
-        left: current.offsetLeft,
-        width: current.offsetWidth,
-      });
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
-  const handleTabClick = (index) => {
-    scrollToSection(index);
-    updateIndicator(index);
-  };
-
-  useEffect(() => {
-    updateIndicator(0); // Initialize indicator position on mount
-  }, []);
-
   return (
-    <section className="bg-white w-full pb-10">
+    <>
 
       {/* ====================== TABS ====================== */}
-      <div className="w-full sm:w-[60%] mt-10 ml-20 relative overflow-hidden">
-          {/* Full light blue bottom line */}
-          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-100"></div>
+      <div className="w-full bg-white sticky top-0 z-50 ml-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-6 overflow-x-auto no-scrollbar py-4">
 
-          <div className="flex justify-start sm:justify-between gap-x-4 sm:gap-x-6 overflow-x-auto scrollbar-hide px-2 sm:px-0" aria-label="Tabs">
-
-            {categories.map((cat, index) => (
+            {tabs.map((tab) => (
               <button
-                key={cat.id}
-                ref={(el) => (tabRefs.current[index] = el)}
-                onClick={() => handleTabClick(index)}
-                className="pb-2 text-sm font-medium text-gray-600 hover:text-black"
+                key={tab.label}
+                onClick={() => {
+                  setActive(tab.label);
+                  scrollToSection(tab.target);
+                }}
+                className={`relative pb-2 text-sm font-medium whitespace-nowrap transition
+                  ${active === tab.label ? "text-blue-600" : "text-gray-600 hover:text-black"}`}
               >
-                {cat.name}
+                {tab.label}
+
+                {active === tab.label && (
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-blue-600 rounded-full"></span>
+                )}
               </button>
             ))}
+
           </div>
-
-          {/* INDICATOR LINE */}
-          <span
-            className="w-20 absolute bottom-[-1px] h-[3px] bg-primary transition-all duration-300"
-            style={indicatorStyle}
-          />
         </div>
-
-     
+      </div>
 
       {/* ====================== HERO SECTION ====================== */}
       <div className="px-[50px] pt-8">
@@ -79,16 +58,18 @@ const SolutionCategories = ({ scrollToSection }) => {
           }}
         >
           <div className="text-white max-w-[450px]">
-            <p className="text-sm opacity-80">AI That Drives Real Business Breakthroughs</p>
+            <p className="text-sm opacity-80">
+              AI That Drives Real Business Breakthroughs
+            </p>
             <h2 className="text-3xl font-semibold leading-tight mt-1">
-              Accelerating Intelligent Transformation with AI-Powered<br />Innovation
+              Accelerating Intelligent Transformation with AI-Powered <br />
+              Innovation
             </h2>
           </div>
         </div>
       </div>
 
-    </section>
+    </>
   );
-};
+}
 
-export default SolutionCategories;

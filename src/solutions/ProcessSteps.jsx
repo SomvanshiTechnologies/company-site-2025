@@ -26,7 +26,7 @@ function ProcessSteps() {
   ];
 
   return (
-    <div className="w-full flex gap-8 px-12 py-10">
+    <div id="rpAutomation" className="w-full flex gap-8 px-12 py-10">
       {/* LEFT SECTION */}
       <div className="w-[50%]">
         <img src={leftImg} alt="automation" className="rounded-xl w-full" />
