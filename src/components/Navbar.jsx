@@ -18,24 +18,9 @@ const Navbar = () => {
   }, []);
 
   const navigation = [
-    { name: "Platform", href: "/" },
-    {/*{
-      name: "Solution",
-      href: "#",
-      dropdown: [
-        { name: "Website Development", href: "/technologies/web" },
-        { name: "Frontend Development", href: "/technologies/frontend" },
-        { name: "Backend Development", href: "/technologies/backend" },
-        { name: "App Development", href: "/technologies/application" },
-        { name: "Full Stack Development", href: "/technologies/fullstack" },
-        { name: "Cloud Optimization", href: "/technologies/cloud" },
-        { name: "Hosting Solutions", href: "/technologies/hosting" },
-      ],
-    },*/},
-    
+    { name: "Platform", href: "/" },    
     { name: "Solutions", href: "/solutions" },
-    { name: "Industries", href: "/industries" },
-
+    { name: "Industries", href: "/industries" },  
     // {
     //   name: "Industries", 
     //   href: "#",
