@@ -41,7 +41,7 @@ export default function LifeSciencesShowcase() {
 
         {/* Content */}
         <div className="relative max-w-7xl mx-auto px-6 h-full flex items-center">
-          <div className="max-w-2xl ml-10">
+          <div className="max-w-2xl">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export default function LifeSciencesShowcase() {
         id="life-sciences"
         className="bg-[#5A11EE] w-full py-20 text-white"
       >
-        <div className="max-w-7xl mx-auto px-6 ml-12">
+        <div className="max-w-7xl mx-auto px-6">
           {/* Header Row */}
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-3xl sm:text-4xl font-semibold">
@@ -107,7 +107,7 @@ export default function LifeSciencesShowcase() {
           </div>
 
           {/* Cards */}
-          <div className="flex flex-nowrap items-center gap-6 ml-10">
+          <div className="flex flex-nowrap items-center gap-6 overflow-x-auto">
             {services.map((service, index) => {
               const isHovered = hovered === index;
 

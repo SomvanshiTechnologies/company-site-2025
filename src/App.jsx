@@ -16,7 +16,7 @@ import IndustiresPage from "./pages/IndustiresPage";
 export default function App() {
   return (
     <Router>
-      <div className="w-full">
+      <div className="w-full overflow-x-hidden">
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<LandingPage />} />

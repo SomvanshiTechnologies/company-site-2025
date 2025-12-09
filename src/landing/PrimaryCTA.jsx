@@ -48,7 +48,7 @@ const PrimaryCTA = () => {
         />
 
         {/* Main Content */}
-        <div className="relative max-w-8xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8 z-10 md:ml-12 lg:ml-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8 z-10">
           <div className="max-w-2xl">
             <p className="font-body text-xs sm:text-sm font-bold text-blue-900">
               Start building today!

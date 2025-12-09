@@ -23,7 +23,7 @@ export default function SolutionCategories() {
     <>
 
       {/* ====================== TABS ====================== */}
-      <div className="w-full bg-white sticky top-0 z-50 ml-10">
+      <div className="w-full bg-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-6 overflow-x-auto no-scrollbar py-4">
 
@@ -50,9 +50,9 @@ export default function SolutionCategories() {
       </div>
 
       {/* ====================== HERO SECTION ====================== */}
-      <div className="px-[50px] pt-8">
+      <div className="px-4 sm:px-6 lg:px-12 pt-8 max-w-7xl mx-auto">
         <div
-          className="w-full h-[340px] rounded-xl overflow-hidden bg-cover bg-center flex items-end p-10"
+          className="w-full h-[340px] rounded-xl overflow-hidden bg-cover bg-center flex items-end p-6 sm:p-10"
           style={{
             backgroundImage: `url(${aisolutions})`,
           }}

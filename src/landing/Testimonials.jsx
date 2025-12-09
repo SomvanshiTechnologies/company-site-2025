@@ -237,7 +237,7 @@ const Testimonials = () => {
         />
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-8 md:ml-12 lg:ml-20 text-left">
+        <div className="relative z-10 max-w-7xl mx-auto py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-8 text-left">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-normal tracking-wide">
             Your AI journey starts here.
           </h2>

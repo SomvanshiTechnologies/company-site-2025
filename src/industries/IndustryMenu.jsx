@@ -19,7 +19,7 @@ export default function IndustryMenu() {
   };
 
   return (
-    <div className="w-full bg-white sticky top-0 z-50 ml-10">
+    <div className="w-full bg-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-6 overflow-x-auto no-scrollbar py-4">
 

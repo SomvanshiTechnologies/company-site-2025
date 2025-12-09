@@ -17,7 +17,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative h-[400px] sm:mt-17 mb-0 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+    <section className="relative h-[400px] sm:mt-17 mb-0 z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 overflow-hidden">
   <AnimatedBackground />
 
   {/* ---------------- SLIDE 1 ---------------- */}
@@ -35,7 +35,7 @@ const HeroSection = () => {
     <div className="absolute inset-0 bg-black/40"></div>
 
     {/* Text */}
-    <div className="relative z-10 flex flex-col justify-center h-full pl-[60px] max-w-[520px]">
+    <div className="relative z-10 flex flex-col justify-center h-full px-6 sm:pl-12 lg:pl-[60px] max-w-full sm:max-w-[520px]">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -83,13 +83,13 @@ const HeroSection = () => {
 
   {/* ---------------- SLIDE 2 ---------------- */}
   <div
-    className={`absolute inset-0 flex transition-opacity duration-700 ease-in-out ${
+    className={`absolute inset-0 flex flex-col md:flex-row transition-opacity duration-700 ease-in-out ${
       current === 1 ? "opacity-100" : "opacity-0"
     }`}
   >
     {/* Text */}
-    <div className="w-1/2 flex flex-col justify-center pl-20 pr-8 text-[#0F172A]">
-      <h1 className="text-[20px] font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8A2BE2] to-[#4FA7FF] whitespace-nowrap w-max">
+    <div className="w-full md:w-1/2 flex flex-col justify-center px-6 sm:px-8 lg:pl-20 lg:pr-8 text-[#0F172A]">
+      <h1 className="text-[20px] font-bold leading-tight text-transparent bg-clip-text bg-linear-to-r from-[#8A2BE2] to-[#4FA7FF]">
         Conversational AI <br /> That Cares
       </h1>
 
@@ -104,29 +104,29 @@ const HeroSection = () => {
     </div>
 
     {/* Image */}
-    <div className="w-1/2 h-full">
+    <div className="hidden md:block md:w-1/2 h-full">
       <img
         src={slide1Img}
         alt="Conversational AI"
-        className="w-[95%] ml-auto h-full object-cover"
+        className="w-full h-full object-cover"
       />
     </div>
   </div>
 
   {/* ---------------- SLIDE 3 ---------------- */}
   <div
-    className={`absolute inset-0 flex transition-opacity duration-700 ease-in-out ${
+    className={`absolute inset-0 flex flex-col md:flex-row transition-opacity duration-700 ease-in-out ${
       current === 2 ? "opacity-100" : "opacity-0"
     }`}
   >
     {/* Text */}
-    <div className="w-1/2 flex flex-col justify-center pl-20 pr-8 text-[#0F172A]">
-      <h1 className="text-[26px] md:text-[20px] font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8A2BE2] to-[#4FA7FF] whitespace-nowrap w-max">
+    <div className="w-full md:w-1/2 flex flex-col justify-center px-6 sm:px-8 lg:pl-20 lg:pr-8 text-[#0F172A]">
+      <h1 className="text-[20px] md:text-[20px] font-bold leading-tight text-transparent bg-clip-text bg-linear-to-r from-[#8A2BE2] to-[#4FA7FF]">
         AI in Navigating & <br /> Wayfinding
       </h1>
 
       <p className="mt-4 text-[15px] leading-relaxed max-w-md">
-        Simplify patient journeys with intelligent indoor wayfinding guiding 
+        Simplify patient journeys with intelligent indoor wayfinding guiding
         visitors with ease.
       </p>
 
@@ -136,11 +136,11 @@ const HeroSection = () => {
     </div>
 
     {/* Image */}
-    <div className="w-1/2 h-full">
+    <div className="hidden md:block md:w-1/2 h-full">
       <img
         src={slideImg2}
         alt="AI Wayfinding"
-        className="w-[95%] ml-auto h-full object-cover"
+        className="w-full h-full object-cover"
       />
     </div>
   </div>
