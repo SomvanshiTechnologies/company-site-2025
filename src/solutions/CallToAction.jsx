@@ -1,24 +1,31 @@
 import React, { useState } from "react";
+// 1. Import useNavigate from react-router-dom
+import { useNavigate } from "react-router-dom"; 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import sampleImg from "../assets/solutions/automation.png";
 import purpleRing from "../assets/Small.svg";
 
 export default function CallToAction() {
+  // 2. Initialize the navigation hook
+  const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const cards = [
     {
       title: "Process Automation Workflow",
       desc: "Automate tasks, streamline operations, and reduce manual effort with intelligent workflow automation solutions.",
+      slug: "process-automation-workflow", // Added slug
     },
     {
       title: "Intelligent Document Processing",
       desc: "Extract, classify, and analyze information from complex documents with AI-powered automation tools.",
+      slug: "intelligent-document-processing", // Added slug
     },
     {
       title: "Data Analytics & Optimization",
       desc: "Leverage real-time analytics to identify trends, optimize processes, and drive strategic business insights.",
+      slug: "data-analytics-optimization", // Added slug
     },
   ];
 
@@ -31,8 +38,19 @@ export default function CallToAction() {
     }),
   };
 
+  // 3. Function to handle the main "Get Started" button click
+  const handleGetStartedClick = () => {
+    navigate("/contact");
+  };
+
+  // 4. Function to handle the "Learn More" button click on the cards
+  const handleLearnMoreClick = (slug) => {
+    // Assuming the detail page route is /solutions/:slug
+    navigate(`/solutions/${slug}`);
+  };
+
   return (
-    <section id="aiTransformation" className="relative w-full bg-gradient-to-b from-[#F6F8FF] to-[#FBF6FB] py-24 px-6 md:px-12 lg:px-20 overflow-hidden">
+    <section id="aiTransformation" className="relative w-full bg-linear-to-b from-[#F6F8FF] to-[#FBF6FB] py-24 px-6 md:px-12 lg:px-20 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-start">
         
         {/* LEFT SECTION */}
@@ -45,7 +63,11 @@ export default function CallToAction() {
             Automate repetitive tasks, optimize workflows, and enhance operational efficiency with enterprise-grade RPA solutions.
           </p>
 
-          <button className="mt-10 inline-flex items-center gap-3 border border-[#3D86E6] text-[#3D86E6] px-5 py-3 rounded-lg font-medium text-[15px] hover:bg-[#3D86E6] hover:text-white transition-all duration-300 hover:shadow-lg">
+          {/* 5. Add onClick handler to the "Get Started" button */}
+          <button 
+            className="mt-10 inline-flex items-center gap-3 border border-[#3D86E6] text-[#3D86E6] px-5 py-3 rounded-lg font-medium text-[15px] hover:bg-[#3D86E6] hover:text-white transition-all duration-300 hover:shadow-lg"
+            onClick={handleGetStartedClick}
+          >
             Get Started <ArrowRight size={18} />
           </button>
         </div>
@@ -65,8 +87,10 @@ export default function CallToAction() {
                 className="relative w-full max-w-[300px] h-[340px] rounded-2xl overflow-hidden bg-white/60 backdrop-blur-sm border border-white/40 cursor-pointer group transition-all duration-200"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
+                // Optional: Make the entire card clickable for easier navigation
+                onClick={() => handleLearnMoreClick(card.slug)}
               >
-                {/* BACKGROUND IMAGE */}
+                {/* BACKGROUND IMAGE and OVERLAYS remain the same */}
                 <motion.img
                   src={sampleImg}
                   alt={card.title}
@@ -75,12 +99,11 @@ export default function CallToAction() {
                   }`}
                 />
 
-                {/* GRADIENT OVERLAY */}
                 <div
                   className={`absolute inset-0 transition-all duration-300 ${
                     isHovered
-                      ? "bg-gradient-to-t from-[#3D86E6]/70 via-transparent to-transparent"
-                      : "bg-gradient-to-t from-[#111]/40 via-transparent to-transparent"
+                      ? "bg-linear-to-t from-[#3D86E6]/70 via-transparent to-transparent"
+                      : "bg-linear-to-t from-[#111]/40 via-transparent to-transparent"
                   }`}
                 ></div>
 
@@ -116,13 +139,21 @@ export default function CallToAction() {
                     }`}
                     whileHover={{ scale: 1.05 }}
                   >
-                    <button className="flex items-center gap-2 bg-white text-[#3D86E6] px-4 py-2 rounded-md font-semibold hover:bg-[#3D86E6] hover:text-white transition-all duration-300">
+                    {/* 6. Add onClick handler to the "Learn More" button */}
+                    <button 
+                        className="flex items-center gap-2 bg-white text-[#3D86E6] px-4 py-2 rounded-md font-semibold hover:bg-[#3D86E6] hover:text-white transition-all duration-300"
+                        // Prevent the card's onClick from firing when the button is clicked
+                        onClick={(e) => {
+                            e.stopPropagation(); 
+                            handleLearnMoreClick(card.slug);
+                        }}
+                    >
                       Learn More <ArrowRight size={16} />
                     </button>
                   </motion.div>
                 </motion.div>
 
-                {/* GLOW EFFECT */}
+                {/* GLOW EFFECT remains the same */}
                 <motion.div
                   className="absolute inset-0 rounded-2xl border border-transparent pointer-events-none"
                   animate={{
@@ -138,7 +169,7 @@ export default function CallToAction() {
         </div>
       </div>
 
-      {/* DECORATIVE RING */}
+      {/* DECORATIVE RING remains the same */}
       <img
         src={purpleRing}
         alt="ring"
