@@ -10,13 +10,25 @@ const tabs = [
 
 export default function IndustryMenu() {
   const [active, setActive] = useState("Life Sciences & Healthcare");
-
-  const scrollToSection = (id) => {
+    const [isSticky, setIsSticky] = useState(false);
+    const menuRef = useRef(null);
+  
+const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+ useEffect(() => {
+  const originalTop = menuRef.current.offsetTop;
+
+  const handleScroll = () => {
+    setIsSticky(window.scrollY >= originalTop - 65);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
     <div className="w-full bg-white sticky top-0 z-50">
