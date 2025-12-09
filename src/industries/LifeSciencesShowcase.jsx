@@ -4,7 +4,6 @@ import heroBg from "../assets/industries/hero.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import magicIcon from "../assets/solutions/magic-icon.svg";
 
 export default function LifeSciencesShowcase() {
   const [hovered, setHovered] = useState(null);
@@ -87,9 +86,7 @@ export default function LifeSciencesShowcase() {
       {/* =========================
           SOLUTIONS SECTION
       ========================== */}
-      <section
-        id="life-sciences"
-        className="bg-[#5A11EE] w-full py-20 text-white"
+      <section id="life-sciences" className="bg-[#5A11EE] w-full py-20 text-white"
       >
         <div className="max-w-7xl mx-auto px-6">
           {/* Header Row */}

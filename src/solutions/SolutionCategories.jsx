@@ -1,16 +1,18 @@
-import React, { useState } from "react";
-import aisolutions from '../assets/solutions/ai-solutions.png';
+import React, { useState, useEffect, useRef } from "react";
+import aisolutions from "../assets/solutions/ai-solutions.png";
+
+const tabs = [
+  { label: "AI Solutions", target: "aiSolutions" },
+  { label: "Product Engineering", target: "pdEngg" },
+  { label: "Robotics Process Automation", target: "rpAutomation" },
+  { label: "AI Transformation", target: "aiTransformation" },
+  { label: "Cloud Solutions", target: "cloudSolutions" },
+];
 
 export default function SolutionCategories() {
-  const tabs = [
-    { label: "AI Solutions", target: "aiSolutions" },
-    { label: "Product Engineering", target: "pdEngg" },
-    { label: "Robotics Process Automation", target: "rpAutomation" },
-    { label: "AI Transformation", target: "aiTransformation" },
-    { label: "Cloud Solutions", target: "cloudSolutions" },
-  ];
-
   const [active, setActive] = useState("AI Solutions");
+  const [isSticky, setIsSticky] = useState(false);
+  const menuRef = useRef(null);
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -19,14 +21,31 @@ export default function SolutionCategories() {
     }
   };
 
-  return (
-    <>
+ useEffect(() => {
+  const originalTop = menuRef.current.offsetTop;
 
-      {/* ====================== TABS ====================== */}
-      <div className="w-full bg-white sticky top-0 z-50">
+  const handleScroll = () => {
+    setIsSticky(window.scrollY >= originalTop - 65);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+  return (
+    <div className="w-full overflow-hidden">
+      {/* ====================== STICKY TAB BAR ====================== */}
+      <div
+  ref={menuRef}
+  className={`w-full bg-white transition-all ${
+    isSticky ? "fixed top-[65px] z-50 shadow-md" : ""
+  }`}
+
+
+        style={{ top: isSticky ? "60px" : "auto" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-6 overflow-x-auto no-scrollbar py-4">
-
             {tabs.map((tab) => (
               <button
                 key={tab.label}
@@ -35,16 +54,18 @@ export default function SolutionCategories() {
                   scrollToSection(tab.target);
                 }}
                 className={`relative pb-2 text-sm font-medium whitespace-nowrap transition
-                  ${active === tab.label ? "text-blue-600" : "text-gray-600 hover:text-black"}`}
+                ${
+                  active === tab.label
+                    ? "text-blue-600"
+                    : "text-gray-600 hover:text-black"
+                }`}
               >
                 {tab.label}
-
                 {active === tab.label && (
                   <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-blue-600 rounded-full"></span>
                 )}
               </button>
             ))}
-
           </div>
         </div>
       </div>
@@ -68,8 +89,6 @@ export default function SolutionCategories() {
           </div>
         </div>
       </div>
-
-    </>
+    </div>
   );
 }
-

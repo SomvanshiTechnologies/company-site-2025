@@ -42,7 +42,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-[600px] sm:mt-17 mb-0 z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 overflow-hidden">
+    <section className="relative h-[390px] sm:mt-17 mb-0 z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 overflow-hidden">
       <AnimatedBackground />
 
       {/* ---------------- SLIDE 1 ---------------- */}
@@ -125,7 +125,7 @@ const HeroSection = () => {
           </p>
 
           <button 
-            className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 text-[15px] w-max"
+            className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 mt-6 text-[15px] w-max"
             onClick={readMoreConversationalAI} // Calls navigate('/trends/...')
           >
             Read more →
@@ -133,11 +133,11 @@ const HeroSection = () => {
         </div>
 
         {/* Image */}
-        <div className="hidden md:block md:w-1/2 h-full pr-25">
+        <div className="hidden md:block md:w-1/2 h-full pr-0">
           <img
             src={slide1Img}
             alt="Conversational AI"
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-full object-cover "
           />
         </div>
       </div>
@@ -160,19 +160,19 @@ const HeroSection = () => {
           </p>
 
           <button 
-            className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 text-[15px] w-max"
+            className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 mt-6 text-[15px] w-max"
             onClick={readMoreWayfinding} // Calls navigate('/trends/...')
           >
             Read more →
           </button>
         </div>
 
-        {/* Image */}
-        <div className="hidden md:block md:w-1/2 h-full pr-25">
+        {/* Image */}        
+        <div className="hidden md:block md:w-1/2 h-full pr-0">
           <img
             src={slideImg2}
             alt="AI Wayfinding"
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-full object-cover "
           />
         </div>
       </div>
