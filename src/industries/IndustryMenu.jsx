@@ -20,6 +20,7 @@ export default function IndustryMenu() {
     }
   };
 
+  /* -------------------- Sticky Header Logic -------------------- */
   useEffect(() => {
     const originalTop = menuRef.current.offsetTop;
 
@@ -31,11 +32,31 @@ export default function IndustryMenu() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  /* -------------------- Scroll Spy Logic -------------------- */
+  useEffect(() => {
+    const sections = tabs.map((tab) => document.getElementById(tab.target));
+
+    const handleScrollSpy = () => {
+      sections.forEach((sec, index) => {
+        if (!sec) return;
+
+        const rect = sec.getBoundingClientRect();
+
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          setActive(tabs[index].label);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScrollSpy);
+    return () => window.removeEventListener("scroll", handleScrollSpy);
+  }, []);
+
   return (
     <div
       ref={menuRef}
       className={`w-full bg-white transition-all ${
-        isSticky ? "fixed top-[60px] z-50" : ""
+        isSticky ? "fixed top-[60px] z-50 shadow-lg" : ""
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
