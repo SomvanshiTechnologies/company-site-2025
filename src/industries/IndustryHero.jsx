@@ -30,10 +30,9 @@ export default function IndustryHero() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-2 h-full flex items-center">
         <div className="h-[320px] flex items-center">
           <div className="max-w-[640px] lg:max-w-[700px]">
-
             {/* p Animation */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -65,14 +64,13 @@ export default function IndustryHero() {
             >
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 px-5 py-3 bg-primary hover:bg-primary text-white font-medium rounded-md shadow-sm transition"
+                className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2 rounded-md text-[15px] inline-flex items-center gap-2"
                 aria-label="Start Project"
               >
                 <span>Start Project</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
-
           </div>
         </div>
       </div>

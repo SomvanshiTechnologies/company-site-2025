@@ -97,13 +97,7 @@ export default function SupplyChainShowcase() {
             <h2 className="text-3xl sm:text-4xl font-semibold">
               Solutions in Supply Chain & Logistic
             </h2>
-
-            <div className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
-              <span className="bg-white text-[#5A11EE] px-2 py-1 rounded-full text-sm font-semibold">
-                ➜
-              </span>
-              <span className="text-sm font-medium">Healthcare</span>
-            </div>
+            
           </div>
 
           {/* Cards */}

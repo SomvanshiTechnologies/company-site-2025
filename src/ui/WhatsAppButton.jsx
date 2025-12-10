@@ -47,8 +47,9 @@ const WhatsAppButton = () => {
   };
 
   return (
-    <div className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50 flex items-center space-x-3">
-  <AnimatePresence>
+<div className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50 flex flex-col items-center space-y-3">
+  
+  {/*<AnimatePresence>
     {showMessage && (
       <motion.div
         initial={{ opacity: 0, x: 50 }}
@@ -74,6 +75,7 @@ const WhatsAppButton = () => {
   >
     <FaPhone />
   </motion.a>
+  */}
 
   <motion.a
     initial={{ opacity: 0, x: 50 }}
@@ -90,7 +92,7 @@ const WhatsAppButton = () => {
   </motion.a>
 
   {/* Scroll to Top Button - separate div for smooth positioning */}
-  <div className="absolute -top-16 right-0">
+  <div className="absolute -top-18 right-0">
     <AnimatePresence>
       {showScrollTop && (
         <motion.button
@@ -99,7 +101,7 @@ const WhatsAppButton = () => {
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.4 }}
           onClick={handleScrollToTop}
-          className="bg-blue-600 text-white text-xl md:text-2xl rounded-full p-2 md:p-3 shadow-lg hover:bg-blue-700 border-2 border-white transition duration-300"
+          className="bg-primary text-white text-2xl md:text-3xl border-4 border-white rounded-full p-3 shadow-lg hover:shadow-blue-200 hover:bg-blue-400 transition duration-300"
           title="Scroll to top"
         >
           <FaArrowUp />

@@ -14,9 +14,9 @@ export default function CloudSolutions() {
     };
 
     return (
-        <section id="cloudSolutions" className="w-full bg-linear-to-b from-[#F6F8FF] to-[#FBF6FB] py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+        <section id="cloudSolutions" className="w-full bg-linear-to-b from-[#F6F8FF] to-[#FBF6FB] py-20 px-6 md:px-4 scroll-mt-[140px] lg:px-10 relative overflow-hidden">
             
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-18 items-center">
                 
                 {/* LEFT IMAGE */}
                 <div>

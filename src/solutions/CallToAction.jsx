@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// 1. Import useNavigate from react-router-dom
 import { useNavigate } from "react-router-dom"; 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -7,7 +6,6 @@ import sampleImg from "../assets/solutions/automation.png";
 import purpleRing from "../assets/Small.svg";
 
 export default function CallToAction() {
-  // 2. Initialize the navigation hook
   const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -15,17 +13,17 @@ export default function CallToAction() {
     {
       title: "Process Automation Workflow",
       desc: "Automate tasks, streamline operations, and reduce manual effort with intelligent workflow automation solutions.",
-      slug: "process-automation-workflow", // Added slug
+      slug: "process-automation-workflow", 
     },
     {
       title: "Intelligent Document Processing",
       desc: "Extract, classify, and analyze information from complex documents with AI-powered automation tools.",
-      slug: "intelligent-document-processing", // Added slug
+      slug: "intelligent-document-processing",
     },
     {
       title: "Data Analytics & Optimization",
       desc: "Leverage real-time analytics to identify trends, optimize processes, and drive strategic business insights.",
-      slug: "data-analytics-optimization", // Added slug
+      slug: "data-analytics-optimization", 
     },
   ];
 
@@ -38,19 +36,16 @@ export default function CallToAction() {
     }),
   };
 
-  // 3. Function to handle the main "Get Started" button click
   const handleGetStartedClick = () => {
     navigate("/contact");
   };
 
-  // 4. Function to handle the "Learn More" button click on the cards
   const handleLearnMoreClick = (slug) => {
-    // Assuming the detail page route is /solutions/:slug
     navigate(`/solutions/${slug}`);
   };
 
   return (
-    <section id="aiTransformation" className="relative w-full bg-linear-to-b from-[#F6F8FF] to-[#FBF6FB] py-24 px-6 md:px-12 lg:px-20 overflow-hidden">
+    <section id="aiTransformation" className="relative w-full h-[450px] bg-linear-to-b from-[#F6F8FF] to-[#FBF6FB] py-6 px-6 md:px-10 lg:px-12 scroll-mt-[140px] overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-start">
         
         {/* LEFT SECTION */}
@@ -173,7 +168,7 @@ export default function CallToAction() {
       <img
         src={purpleRing}
         alt="ring"
-        className="pointer-events-none absolute -left-10 w-48 md:w-56 opacity-100"
+        className="pointer-events-none absolute left-5 mb-50 w-48 md:w-56 opacity-100"
         aria-hidden
       />
     </section>

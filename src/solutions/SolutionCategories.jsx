@@ -21,51 +21,66 @@ export default function SolutionCategories() {
     }
   };
 
- useEffect(() => {
-  const originalTop = menuRef.current.offsetTop;
+  useEffect(() => {
+    const originalTop = menuRef.current.offsetTop;
 
-  const handleScroll = () => {
-    setIsSticky(window.scrollY >= originalTop - 65);
-  };
+    const handleScroll = () => {
+      setIsSticky(window.scrollY >= originalTop - 65);
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+    /* -------------------- Scroll Spy Logic -------------------- */
+    useEffect(() => {
+      const sections = tabs.map((tab) => document.getElementById(tab.target));
+  
+      const handleScrollSpy = () => {
+        sections.forEach((sec, index) => {
+          if (!sec) return;
+  
+          const rect = sec.getBoundingClientRect();
+  
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            setActive(tabs[index].label);
+          }
+        });
+      };
+  
+      window.addEventListener("scroll", handleScrollSpy);
+      return () => window.removeEventListener("scroll", handleScrollSpy);
+    }, []);
 
   return (
     <div className="w-full overflow-hidden">
-      {/* ====================== STICKY TAB BAR ====================== */}
       <div
-  ref={menuRef}
-  className={`w-full bg-white transition-all ${
-    isSticky ? "fixed top-[65px] z-50 shadow-md" : ""
-  }`}
-
-
+        ref={menuRef}
+        className={`w-full bg-white transition-all ${ isSticky ? "fixed top-[65px] z-50 shadow-md" : ""}`}
         style={{ top: isSticky ? "60px" : "auto" }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-6 overflow-x-auto no-scrollbar py-4">
+        <div className="max-w-7xl ml-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex  gap-6 overflow-x-auto no-scrollbar py-4">
             {tabs.map((tab) => (
-              <button
-                key={tab.label}
-                onClick={() => {
-                  setActive(tab.label);
-                  scrollToSection(tab.target);
-                }}
-                className={`relative pb-2 text-sm font-medium whitespace-nowrap transition
-                ${
-                  active === tab.label
-                    ? "text-primary"
-                    : "text-gray-600 hover:text-black"
-                }`}
-              >
-                {tab.label}
-                {active === tab.label && (
-                  <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-primary rounded-full"></span>
-                )}
-              </button>
-            ))}
+            <button
+              key={tab.label}
+              onClick={() => {
+                setActive(tab.label);
+                scrollToSection(tab.target);
+              }}
+              className={`relative pb-2 text-sm font-medium whitespace-nowrap transition ${
+                active === tab.label
+                  ? "text-primary"
+                  : "text-gray-600 hover:text-black"
+              }`}
+            >
+              {tab.label}
+
+              {active === tab.label && (
+                <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-primary rounded-full"></span>
+              )}
+            </button>
+          ))}
           </div>
         </div>
       </div>

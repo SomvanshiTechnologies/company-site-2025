@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // 1. Import useNavigate from react-router-dom
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from "react-router-dom";
 
 import slide1Img from "../assets/solutions/ai-2.png";
 import slideImg2 from "../assets/solutions/ai-3.png";
@@ -8,10 +8,9 @@ import wave from "../assets/solutions/wave.gif";
 import AnimatedBackground from "../ui/AnimatedBackground";
 import { motion } from "framer-motion";
 
-
 const HeroSection = () => {
   // 2. Initialize the navigation function
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -24,25 +23,21 @@ const HeroSection = () => {
   // Function for the 'Start Project' button
   const startProject = () => {
     // Navigate to /contact using React Router's navigate
-    navigate('/contact'); 
+    navigate("/contact");
   };
 
   // Function for the 'Read more' button on slide 2
   const readMoreConversationalAI = () => {
-    // Navigate to the specific article path /trends/:id
-    // Replace 'conversational-ai-id' with the actual ID for this article
-    navigate('/trends/conversational-ai-id');
+    navigate("/trends/conversational-ai-id");
   };
 
   // Function for the 'Read more' button on slide 3
   const readMoreWayfinding = () => {
-    // Navigate to the specific article path /trends/:id
-    // Replace 'ai-wayfinding-id' with the actual ID for this article
-    navigate('/trends/ai-wayfinding-id');
+    navigate("/trends/ai-wayfinding-id");
   };
 
   return (
-    <section className="relative h-[600px] sm:mt-17 mb-0 z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 overflow-hidden">
+    <section className="relative h-[450px] sm:mt-17 mb-0 z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 overflow-hidden">
       <AnimatedBackground />
 
       {/* ---------------- SLIDE 1 ---------------- */}
@@ -60,7 +55,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Text */}
-        <div className="relative z-10 ml-10 flex flex-col justify-center h-full px-6 sm:pl-12 lg:pl-[60px] max-w-full sm:max-w-[520px]">
+        <div className="relative z-10 flex flex-col justify-center h-full px-6 sm:pl-12 lg:pl-[60px] max-w-full sm:max-w-[520px]">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -89,8 +84,8 @@ const HeroSection = () => {
               }}
             >
               From automation to intelligence, our AI-driven solutions help
-              enterprises streamline processes, make faster decisions, and deliver
-              exceptional experiences.
+              enterprises streamline processes, make faster decisions, and
+              deliver exceptional experiences.
             </motion.p>
 
             <motion.button
@@ -109,31 +104,31 @@ const HeroSection = () => {
 
       {/* ---------------- SLIDE 2 ---------------- */}
       <div
-        className={`absolute inset-0 flex flex-col md:flex-row transition-opacity duration-700 ease-in-out ${
+        className={`absolute inset-0 flex transition-opacity duration-700 ease-in-out ${
           current === 1 ? "opacity-100" : "opacity-0"
         }`}
       >
         {/* Text */}
-        <div className="w-full ml-8 md:w-1/2 flex flex-col justify-center px-6 sm:px-8 lg:pl-20 lg:pr-8 text-[#0F172A]">
-          <h1 className="text-[20px] font-bold leading-tight text-transparent bg-clip-text bg-linear-to-r from-[#8A2BE2] to-[#4FA7FF]">
-            Conversational AI <br /> That Cares
+        <div className="relative z-10 flex flex-col justify-center h-full px-6 sm:pl-12 lg:pl-[60px] max-w-full sm:max-w-[520px]">
+          <h1 className="font-semibold leading-tight text-transparent bg-clip-text bg-linear-to-r from-[#8A2BE2] to-[#4FA7FF]">
+            Conversational AI That Cares
           </h1>
 
-          <p className="mt-4 text-[15px] leading-relaxed max-w-md">
-            Enable 24/7 patient engagement through voice chat and predictive care
-            assistants — reducing wait times and improving satisfaction.
+          <p className="mt-4 leading-relaxed">
+            Enable 24/7 patient engagement through voice chat and predictive
+            care assistants — reducing wait times and improving satisfaction.
           </p>
 
-          <button 
+          <button
             className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 text-[15px] w-max"
-            onClick={readMoreConversationalAI} // Calls navigate('/trends/...')
+            onClick={readMoreConversationalAI}
           >
             Read more →
           </button>
         </div>
 
         {/* Image */}
-        <div className="hidden md:block md:w-1/2 h-full pr-25">
+        <div className="hidden md:block absolute right-8 top-1/2 -translate-y-1/2 w-[45%] h-[80%]">
           <img
             src={slide1Img}
             alt="Conversational AI"
@@ -144,31 +139,31 @@ const HeroSection = () => {
 
       {/* ---------------- SLIDE 3 ---------------- */}
       <div
-        className={`absolute inset-0 flex flex-col md:flex-row transition-opacity duration-700 ease-in-out ${
+        className={`absolute inset-0 flex transition-opacity duration-700 ease-in-out ${
           current === 2 ? "opacity-100" : "opacity-0"
         }`}
       >
         {/* Text */}
-        <div className="w-full ml-8 md:w-1/2 flex flex-col justify-center px-6 sm:px-8 lg:pl-20 lg:pr-8 text-[#0F172A]">
-          <h1 className="text-[20px] md:text-[20px] font-bold leading-tight text-transparent bg-clip-text bg-linear-to-r from-[#8A2BE2] to-[#4FA7FF]">
-            AI in Navigating & <br /> Wayfinding
+        <div className="relative z-10 flex flex-col justify-center h-full px-6 sm:pl-12 lg:pl-[60px] max-w-full sm:max-w-[520px]">
+          <h1 className="font-semibold leading-tight text-transparent bg-clip-text bg-linear-to-r from-[#8A2BE2] to-[#4FA7FF]">
+            AI in Navigating & Wayfinding
           </h1>
 
-          <p className="mt-4 text-[15px] leading-relaxed max-w-md">
+          <p className="mt-4 leading-relaxed">
             Simplify patient journeys with intelligent indoor wayfinding guiding
             visitors with ease.
           </p>
 
-          <button 
+          <button
             className="bg-[#3182CE] hover:bg-[#2B6CB0] text-white font-medium px-5 py-2.5 rounded-md mt-6 text-[15px] w-max"
-            onClick={readMoreWayfinding} // Calls navigate('/trends/...')
+            onClick={readMoreWayfinding}
           >
             Read more →
           </button>
         </div>
 
         {/* Image */}
-        <div className="hidden md:block md:w-1/2 h-full pr-25">
+        <div className="hidden md:block absolute right-8 top-1/2 -translate-y-1/2 w-[45%] h-[80%]">
           <img
             src={slideImg2}
             alt="AI Wayfinding"

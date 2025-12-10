@@ -46,16 +46,14 @@ const AISolutionsIntro = () => {
     navigate('/contact');
   };
 
-  // Function to handle navigation for the View More buttons on the cards
   const handleViewMoreClick = (slug) => {
-    // Assuming your solution detail pages are at /solutions/:slug
     navigate(`/solutions/${slug}`);
   };
 
   return (
-    <section id="aiSolutions" className="relative flex flex-col items-center justify-center px-4 sm:px-8 py-4 pb-8 bg-white">
+    <section id="aiSolutions" className="relative flex flex-col items-center justify-center px-2 sm:px-8 py-4 pb-4 bg-white scroll-mt-[140px]">
       {/* GRID */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-5">
         {cards.map((item, index) => (
           <motion.div
             key={index}
@@ -68,7 +66,7 @@ const AISolutionsIntro = () => {
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: index * 0.2 }}
-            onClick={() => handleViewMoreClick(item.slug)} // 3. Add onClick to the card container
+            onClick={() => handleViewMoreClick(item.slug)} 
           >
             <div className="mb-6">
               <img

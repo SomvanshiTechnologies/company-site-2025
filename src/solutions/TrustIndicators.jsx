@@ -22,9 +22,9 @@ export default function TrustIndicators() {
   ];
 
   return (
-    <section className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
+    <section className="w-full bg-white py-10 px-6 md:px-8 lg:px-10">
       {/* Heading */}
-      <div className="ml-0 lg:ml-[-30px] text-left mb-12">
+      <div className="text-left mb-12">
         <h2 className="text-[42px] md:text-[48px] font-extrabold text-[#1B2744] leading-tight">
           Why Businesses Trust
         </h2>
