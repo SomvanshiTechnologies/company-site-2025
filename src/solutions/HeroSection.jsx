@@ -37,7 +37,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-[450px] sm:mt-17 mb-0 z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 overflow-hidden">
+    <section className="relative h-[600px] sm:mt-17 mb-0 z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 overflow-hidden">
       <AnimatedBackground />
 
       {/* ---------------- SLIDE 1 ---------------- */}

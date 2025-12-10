@@ -167,9 +167,9 @@ const AboutUs = () => {
           <h3 className="text-gray-500 text-2xl sm:text-3xl md:text-4xl font-normal mb-2 md:mb-3">
             Our Purpose
           </h3>
-          <h2 className="text-slate-900 text-2xl sm:text-3xl md:text-4xl font-semibold px-4">
+          {/*<h2 className="text-slate-900 text-2xl sm:text-3xl md:text-4xl font-semibold px-4">
             Some text will be here
-          </h2>
+          </h2>*/}
         </div>
 
         {/* Card Component */}
