@@ -17,7 +17,7 @@ export default function IndustryHero() {
   }, []);
 
   return (
-    <section className="relative h-[400px] mt-12 sm:mt-17 mb-0 z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 overflow-hidden">
+    <section className="relative h-[600px] mt-12 sm:mt-17 mb-0 z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 overflow-hidden">
       <AnimatedBackground />
 
       {/* Background Image */}
