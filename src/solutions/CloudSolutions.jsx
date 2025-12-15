@@ -1,8 +1,7 @@
 import React from "react";
-// 1. Import useNavigate
 import { useNavigate } from "react-router-dom"; 
-import cloudImg from "../assets/solutions/dashboard.gif"; // replace with your image
-import purpleRing from "../assets/Small.svg";  // optional
+import cloudImg from "../assets/solutions/dashboard.gif"; 
+import purpleRing from "../assets/Small.svg";  
 
 export default function CloudSolutions() {
     // 2. Initialize the navigation hook
