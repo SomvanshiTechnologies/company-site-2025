@@ -97,12 +97,12 @@ const LatestTrends = () => {
   }
 
   return (
-        <section className="bg-white py-16 sm:py-24">
+        <section className="bg-white py-32 sm:py-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="mb-12">
-          <h2 className="text-3xl sm:text-4xl font-heading font-semibold text-primary">
+        <div className="mb-20">
+          <h2 className="text-4xl sm:text-5xl font-heading font-bold text-gray-900" style={{ lineHeight: '1.2' }}>
             Latest Trends and Insights
           </h2>
         </div>
@@ -112,38 +112,38 @@ const LatestTrends = () => {
           {/* Large Cards */}
           {largeCards.map((card) => (
             <Link key={card.id} to={`/trends/${card.id}`}>
-              <div className="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
+              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden h-full flex flex-col hover:border-gray-300 hover:shadow-lg transition-all duration-300">
               {card.image_url && (
-                <img src={card.image_url} alt={card.title} className="w-full h-48 object-cover rounded" />
+                <img src={card.image_url} alt={card.title} className="w-full h-56 object-cover" />
               )}
-              <div className="pr-3.5 p-5 mt-4 flex-1 flex flex-col">
-                <p className="font-body text-sm text-gray-500 mb-2">
-                 <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
+              <div className="p-6 flex-1 flex flex-col">
+                <p className="font-body text-sm text-gray-500 mb-3">
+                 <span className='text-gray-900 font-medium'>{card.type}</span> | {formatDate(card.created_at)}
                 </p>
-                <h3 className="font-heading text-xl font-semibold text-text mb-3 line-clamp-2">
+                <h3 className="font-heading text-2xl font-bold text-gray-900 mb-4 line-clamp-2" style={{ lineHeight: '1.3' }}>
                   {card.title}
                 </h3>
-                <p className="font-body text-gray-600 mb-4 line-clamp-3 flex-1">
+                <p className="font-body text-gray-600 mb-6 line-clamp-3 flex-1" style={{ lineHeight: '1.7' }}>
                   {card.excerpt}
                 </p>
-                  <CgArrowLongRight className="w-6 h-6" />
+                  <CgArrowLongRight className="w-6 h-6 text-primary" />
               </div>
             </div>
             </Link>
           ))}
 
           {/* Small Cards Column - Desktop */}
-          <div className="flex flex-col gap-4 h-full">
+          <div className="flex flex-col gap-6 h-full">
             {smallCards.map((card) => (
               <Link key={card.id} to={`/trends/${card.id}`} className="flex-1">
-                <div className="bg-gradient-soft p-4 rounded-lg  h-full flex flex-col">
-                  <p className="font-body text-sm text-gray-500 mb-2">
-                    <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
+                <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 h-full flex flex-col hover:border-gray-300 hover:shadow-lg transition-all duration-300">
+                  <p className="font-body text-sm text-gray-500 mb-3">
+                    <span className='text-gray-900 font-medium'>{card.type}</span> | {formatDate(card.created_at)}
                   </p>
-                  <h3 className="font-heading text-lg font-semibold text-text mb-3 line-clamp-2">
+                  <h3 className="font-heading text-xl font-bold text-gray-900 mb-3 line-clamp-2" style={{ lineHeight: '1.3' }}>
                     {card.title}
                   </h3>
-                  <p className="font-body text-gray-600 mb-4 line-clamp-2 flex-1">
+                  <p className="font-body text-gray-600 mb-4 line-clamp-2 flex-1" style={{ lineHeight: '1.6' }}>
                     {card.excerpt}
                   </p>
                   <div className="text-primary hover:opacity-80">
@@ -194,9 +194,9 @@ const LatestTrends = () => {
               <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory">
                 {smallCards.map((card) => (
                   <Link key={card.id} to={`/trends/${card.id}`} className="shrink-0 w-[85%] sm:w-[70%] snap-start">
-                    <div className="bg-gradient-soft p-4 rounded-lg  h-full">
+                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 h-full">
                       <p className="font-body text-sm text-gray-500 mb-2">
-                        <span className='text-gray-900'>{card.type}</span> | {formatDate(card.created_at)}
+                        <span className='text-gray-900 font-medium'>{card.type}</span> | {formatDate(card.created_at)}
                       </p>
                       <h3 className="font-heading text-lg font-semibold text-text mb-3 line-clamp-2">
                         {card.title}

@@ -55,7 +55,7 @@ const Transformation = () => {
   ];
 
   return (
-    <section className="py-12 relative overflow-hidden" ref={ref}>
+    <section className="py-32 sm:py-40 relative overflow-hidden" ref={ref}>
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -63,27 +63,27 @@ const Transformation = () => {
           alt="Developers working in modern office"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
       </div>
 
       {/* Content */}
       <div className="text-white relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-10"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-gilroy font-extrabold md:text-4xl mb-4">
-            Solutions That <span className="text-brand-orange">Transform</span>
+          <h2 className="text-4xl font-gilroy font-bold md:text-5xl lg:text-6xl mb-6" style={{ lineHeight: '1.2' }}>
+            Solutions That <span className="text-white">Transform</span>
           </h2>
-          <p className="text-lg    max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl max-w-2xl mx-auto text-white/90" style={{ lineHeight: '1.8' }}>
             We engineer cutting-edge technology solutions that solve complex business challenges
             and drive sustainable growth for enterprises worldwide.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -103,11 +103,11 @@ const Transformation = () => {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-gilroy font-extrabold text-dark-gray mb-3 group-hover:text-brand-orange transition-colors">
+                <h3 className="text-xl font-gilroy font-bold text-gray-900 mb-4 transition-colors" style={{ lineHeight: '1.3' }}>
                   {service.title}
                 </h3>
 
-                <p className="   text-medium-gray mb-4 leading-relaxed text-sm">
+                <p className="text-gray-600 mb-6 text-base" style={{ lineHeight: '1.7' }}>
                   {service.description}
                 </p>
 
@@ -136,18 +136,18 @@ const Transformation = () => {
 
         {/* Bottom CTA */}
         <motion.div
-          className="text-center mt-10"
+          className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <motion.button
-            className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg    font-semibold transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="bg-white hover:bg-gray-50 text-primary px-10 py-4 rounded-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl inline-flex items-center gap-2 text-base"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             onClick={() => navigate('/solutions')}
           >
-            <Zap className="w-4 h-4" />
+            <Zap className="w-5 h-5" />
             Explore All Solutions
           </motion.button>
         </motion.div>

@@ -54,20 +54,20 @@ const LatestNews = () => {
   };
 
   return (
-       <section className="bg-white py-16 sm:py-24">
+       <section className="bg-gray-50 py-32 sm:py-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="mb-12 flex justify-between items-center">
-          <h2 className="text-3xl sm:text-4xl font-heading font-semibold text-primary">
+        <div className="mb-20 flex justify-between items-center">
+          <h2 className="text-4xl sm:text-5xl font-heading font-bold text-gray-900" style={{ lineHeight: '1.2' }}>
             Latest News
           </h2>
           <Link
             to="/news"
-            className="font-body font-medium text-primary hover:opacity-80 text-sm sm:text-base"
+            className="font-body font-medium text-primary hover:opacity-80 text-base inline-flex items-center gap-1"
           >
-            Explore all News
-            <span aria-hidden="true" className="ml-1">→</span>
+            Explore all
+            <span aria-hidden="true">→</span>
           </Link>
         </div>
 

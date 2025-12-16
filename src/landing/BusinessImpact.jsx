@@ -60,21 +60,21 @@ const BusinessImpact = () => {
   const particlesOpacity = useTransform(scrollYProgress, [0, 0.4, 0.8], [0, 1, 0]);
 
   return (
-    <section ref={sectionRef} className="bg-white py-16 sm:py-24">
+    <section ref={sectionRef} className="bg-gray-50 py-32 sm:py-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Main two-column grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
 
           {/* --- Left Column: Text Content --- */}
-          <div className="bg-gradient-soft p-8 sm:p-10 lg:p-12 rounded-lg">
+          <div className="bg-white p-12 sm:p-14 lg:p-16 rounded-xl border border-gray-200">
 
             {/* Section Header */}
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold mb-10 sm:mb-12">
-              <span className="text-primary">Businesss Impact</span>
-              <span className="text-text"> and </span>
+            <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-14" style={{ lineHeight: "1.2" }}>
+              <span className="text-primary">Business Impact</span>
+              <span className="text-gray-900"> and </span>
               <span className="text-primary">Growth</span>
-              <span className="text-text"> of clients</span>
+              <span className="text-gray-900"> of clients</span>
             </h2>
 
             {/* Plain Text Items with Check Buttons */}
@@ -82,24 +82,24 @@ const BusinessImpact = () => {
               {impactData.map((item, index) => (
                 <div key={index}>
                   {/* Item Content */}
-                  <div className="py-6">
-                    <h3 className="font-heading text-lg sm:text-xl font-semibold text-gray-900 mb-3">
+                  <div className="py-8">
+                    <h3 className="font-heading text-xl sm:text-2xl font-bold text-gray-900 mb-4" style={{ lineHeight: "1.3" }}>
                       {item.title}
                     </h3>
-                    <p className="font-body text-gray-600 text-sm sm:text-base leading-relaxed mb-4 line-clamp-2">
+                    <p className="font-body text-gray-600 text-base sm:text-lg mb-5 line-clamp-2" style={{ lineHeight: "1.7" }}>
                       {item.description}
                     </p>
                     {/* Check Button */}
                     <a
                       href={item.link}
-                      className="inline-block font-body text-primary hover:underline text-sm sm:text-base"
+                      className="inline-block font-body text-primary hover:underline text-base font-medium"
                     >
-                      Check
+                      Learn more →
                     </a>
                   </div>
                   {/* Separator Line (except after last item) */}
                   {index < impactData.length - 1 && (
-                    <hr className="border-t border-gray-300" />
+                    <hr className="border-t border-gray-200" />
                   )}
                 </div>
               ))}

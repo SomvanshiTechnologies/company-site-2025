@@ -12,10 +12,10 @@ const featureTags = [
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-gray-50 via-white to-gray-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
       <AnimatedBackground />
 
-      <div className="relative my-12 sm:my-24 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+      <div className="relative my-24 sm:my-32 lg:my-40 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div>
@@ -34,7 +34,7 @@ const HeroSection = () => {
 
             {/* Main Heading */}
             <motion.h1
-              className="font-gilroy font-black text-3xl md:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight text-center lg:text-left"
+              className="font-gilroy font-black text-4xl md:text-6xl lg:text-7xl text-gray-900 mb-8 leading-[1.15] text-center lg:text-left"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -48,7 +48,8 @@ const HeroSection = () => {
 
             {/* Subtitle */}
             <motion.p
-              className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 max-w-2xl leading-relaxed text-center lg:text-left"
+              className="text-lg sm:text-xl text-gray-600 mb-12 sm:mb-14 max-w-xl leading-relaxed text-center lg:text-left"
+              style={{ lineHeight: '1.8' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -59,32 +60,32 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <motion.div
-              className="mb-10 sm:mb-12 flex flex-col sm:flex-row sm:flex-wrap items-center gap-3 sm:gap-4 justify-center lg:justify-start"
+              className="mb-14 sm:mb-16 flex flex-col sm:flex-row sm:flex-wrap items-center gap-4 sm:gap-5 justify-center lg:justify-start"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  to="/solutions"
-                  className="rounded-lg border-2 border-primary px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-primary hover:bg-primary hover:text-white transition-colors inline-flex items-center justify-center gap-2"
-                >
-                  Explore our solutions
-                </Link>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <Link
                   to="/contact"
-                  className="bg-primary hover:bg-hover text-white px-6 py-3 sm:px-8 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 shadow-xl hover:shadow-2xl inline-flex items-center justify-center gap-2"
+                  className="bg-primary hover:bg-hover text-white px-10 py-4 rounded-lg font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2"
                 >
                   Start your project
                   <ArrowRight className="w-5 h-5" />
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link
+                  to="/solutions"
+                  className="rounded-lg border border-gray-300 px-10 py-4 text-base font-medium text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-colors inline-flex items-center justify-center gap-2"
+                >
+                  Explore solutions
                 </Link>
               </motion.div>
             </motion.div>
@@ -128,7 +129,7 @@ const HeroSection = () => {
 
         {/* Bottom Stats */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mt-16 sm:mt-20 pt-8 sm:pt-10 border-t border-gray-200"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mt-20 sm:mt-28 pt-12 sm:pt-16 border-t border-gray-200"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
@@ -140,10 +141,10 @@ const HeroSection = () => {
             { number: "99.9%", label: "Uptime" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-2">
                 {stat.number}
               </div>
-              <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
+              <div className="text-sm sm:text-base text-gray-600">{stat.label}</div>
             </div>
           ))}
         </motion.div>

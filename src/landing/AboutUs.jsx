@@ -58,47 +58,47 @@ const AboutUs = () => {
   return (
     <div className="relative overflow-x-hidden">
       {/* --- Top Section: "We design systems..." --- */}
-      <section className="relative bg-gradient-soft pt-20 sm:pt-32 md:pt-40 pb-24 sm:pb-32 md:pb-40 overflow-hidden">
+      <section className="relative bg-white pt-32 sm:pt-40 md:pt-48 pb-32 sm:pb-40 md:pb-48 overflow-hidden">
         {/* Main content container */}
         {/* Positioned background SVG images */}
-        
+
         <img
           src={Ellipse30}
           alt=""
-          className="absolute bottom-[-10px] right-[-20px] w-[200px] sm:w-[240px] md:w-[280px] pointer-events-none"
+          className="absolute bottom-[-10px] right-[-20px] w-[200px] sm:w-[240px] md:w-[280px] pointer-events-none opacity-40"
         />
         <img
           src={small}
           alt=""
-          className="absolute bottom-[-30px] right-[160px] w-[420px] sm:w-[500px] md:w-[560px] pointer-events-none"
-        />        
+          className="absolute bottom-[-30px] right-[160px] w-[420px] sm:w-[500px] md:w-[560px] pointer-events-none opacity-40"
+        />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             {/* Headline */}
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8" style={{ lineHeight: '1.2' }}>
               We design systems that learn, adapt, and evolve with you.
             </h2>
 
             {/* Sub-headline */}
-            <p className="mt-6 font-body text-base sm:text-lg leading-relaxed text-gray-600">
+            <p className="font-body text-lg sm:text-xl text-gray-600 mb-10" style={{ lineHeight: '1.8' }}>
               From healthcare startups to e-commerce platforms, we serve
               businesses across industries.
             </p>
 
             {/* CTA Button */}
-            <div className="mt-8 sm:mt-10">
+            <div className="mt-10">
               <a
                 href="#"
                 className="
                     inline-block
-                    font-body font-medium text-primary
-                    border-2 border-primary
+                    font-body font-medium text-gray-700
+                    border border-gray-300
                     rounded-lg
-                    px-6 py-3
-                    text-sm sm:text-base
-                    hover:bg-primary
-                    hover:text-white
+                    px-8 py-3
+                    text-base
+                    hover:bg-gray-50
+                    hover:border-gray-400
                     transition-colors
                   "
               >
@@ -161,21 +161,18 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-6">
+      <section className="bg-gray-50 flex flex-col items-center justify-center py-32 sm:py-40 px-6">
         {/* Header Section */}
-        <div className="text-center mb-8 md:mb-12">
-          <h3 className="text-gray-500 text-2xl sm:text-3xl md:text-4xl font-normal mb-2 md:mb-3">
+        <div className="text-center mb-16 md:mb-20">
+          <h3 className="text-gray-900 text-4xl sm:text-5xl font-bold" style={{ lineHeight: '1.2' }}>
             Our Purpose
           </h3>
-          {/*<h2 className="text-slate-900 text-2xl sm:text-3xl md:text-4xl font-semibold px-4">
-            Some text will be here
-          </h2>*/}
         </div>
 
         {/* Card Component */}
-        <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-6xl w-full flex flex-col md:flex-row md:min-h-[300px] md:max-h-[400px]">
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden max-w-6xl w-full flex flex-col md:flex-row">
           {/* Left: Image Section */}
-          <div className="md:w-4/12 w-full relative h-48 sm:h-56 md:h-auto">
+          <div className="md:w-5/12 w-full relative h-64 sm:h-80 md:h-auto">
             <img
               src={ceo}
               alt="Ameya Somvanshi"
@@ -184,9 +181,9 @@ const AboutUs = () => {
           </div>
 
           {/* Right: Content Section */}
-          <div className="md:w-7/12 w-full p-6 sm:p-8 md:p-12 flex flex-col justify-center">
-            <blockquote className="mb-6 md:mb-8">
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
+          <div className="md:w-7/12 w-full p-10 sm:p-12 md:p-16 flex flex-col justify-center">
+            <blockquote className="mb-10">
+              <p className="text-gray-700 text-lg sm:text-xl" style={{ lineHeight: '1.8' }}>
                 "We're building an AI-driven future where every process learns,
                 every decision adapts, and every product creates real value. Our
                 goal is to make intelligence a natural part of business —
@@ -197,7 +194,7 @@ const AboutUs = () => {
             {/* Action Link with Primary Color */}
             <a
               href="about"
-              className="text-primary font-semibold flex items-center gap-1 hover:opacity-80 transition-opacity mb-6 md:mb-10 w-fit"
+              className="text-primary font-medium flex items-center gap-2 hover:opacity-80 transition-opacity mb-10 w-fit text-base"
             >
               Our objectives
               <svg
@@ -218,10 +215,10 @@ const AboutUs = () => {
 
             {/* Author Details */}
             <div>
-              <h4 className="text-slate-900 font-black text-lg sm:text-xl">
+              <h4 className="text-gray-900 font-bold text-xl sm:text-2xl mb-2">
                 Ameya Somvanshi
               </h4>
-              <p className="text-slate-500 font-medium text-sm sm:text-base">
+              <p className="text-gray-600 font-medium text-base sm:text-lg">
                 CEO | Somvanshi Technologies
               </p>
             </div>

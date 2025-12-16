@@ -22,34 +22,30 @@ const capabilitiesData = [
 export default function CoreCapabilities() {
   return (
     // Section wrapper with a white background
-    <section className="bg-white py-16 sm:py-24">
+    <section className="bg-gray-50 py-32 sm:py-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        
+
         {/* Section Header */}
-        <div className="text-left mb-12">
-          <h2 className="text-3xl sm:text-4xl font-heading font-semibold text-text">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-heading font-bold text-gray-900" style={{ lineHeight: '1.2' }}>
             AI that Transforms the Way You Work
           </h2>
         </div>
-        
-        {/* Main Purple Gradient Container */}
-        <div className="bg-gradient-purple text-white rounded-xl shadow-2xl p-10 sm:p-12 lg:p-16">
-          
-          {/* Capabilities Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-7">
-            
-            {capabilitiesData.map((item, index) => (
-              // Each column item
-              // Using flex to push the "View More" link to the bottom
-              <div key={item.title} className="flex flex-col">
-                
-                <h4 className="font-heading text-3xl font-semibold mb-4 text-left">
-                  {item.title}
-                </h4>
-                
-                <p className="font-body text-gray-300 text-sm leading-7 text-left">
-                  {item.description}
-                </p>
+
+        {/* Capabilities Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+
+          {capabilitiesData.map((item, index) => (
+            // Each column item
+            <div key={item.title} className="bg-white p-10 rounded-xl border border-gray-200 flex flex-col">
+
+              <h4 className="font-heading text-2xl font-bold mb-5 text-gray-900" style={{ lineHeight: '1.3' }}>
+                {item.title}
+              </h4>
+
+              <p className="font-body text-gray-600 text-base" style={{ lineHeight: '1.7' }}>
+                {item.description}
+              </p>
                 
                 {/* "View More" Link
                   - 'mt-auto' pushes it to the bottom of the flex container
@@ -67,10 +63,9 @@ export default function CoreCapabilities() {
                 </a> */}
               </div>
             ))}
-            
+
           </div>
-        </div>
-        
+
       </div>
     </section>
   );

@@ -10,31 +10,31 @@ const featureTags = [
 
 const Info = () => {
   return (
-    <div className=" bg-white py-16 sm:py-20">
-      
+    <div className="bg-white py-32 sm:py-40">
+
       {/* Centering and padding container */}
-      <div className="max-w-8xl mx-auto px-6 lg:px-8">
-        
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
         {/* Main two-column grid
           - 'grid-cols-1' (mobile): Stacks vertically.
           - 'lg:grid-cols-2' (large screens): Side-by-side.
           - 'gap-16' (or 'gap-x-16 gap-y-10'): Spacing between columns/rows.
         */}
-        
-        <div className="grid grid-cols-1 lg:grid-cols-[60%_35%] gap-10 items-stretch">
+
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_35%] gap-12 lg:gap-16 items-stretch">
           {/* --- Left Column: Text Content --- */}
           {/* The content box with the very pale lavender/pink background */}
-          <div className="bg-gradient-soft p-4.5 sm:p-12 lg:p-16 rounded-lg  flex flex-col justify-between">
-            <div>
+          <div className="bg-gray-50 p-12 sm:p-14 lg:p-16 rounded-xl flex flex-col justify-between border border-gray-200">
+            <div className="space-y-6">
               {/* Text Block 1 */}
-              <p className="text-sm leading-8 text-gray-900">
+              <p className="text-lg leading-relaxed text-gray-900" style={{ lineHeight: '1.8' }}>
                 At Somvanshi Technologies, we help organizations embrace the
                 power of AI to streamline operations, enhance customer
                 experiences, and unlock new growth opportunities.
               </p>
 
               {/* Text Block 2 */}
-              <p className="text-sm leading-8 text-gray-900">
+              <p className="text-lg leading-relaxed text-gray-900" style={{ lineHeight: '1.8' }}>
                 Our expertise in AI automation, custom SaaS platforms, and
                 digital transformation enables businesses to operate smarter,
                 faster, and more efficiently.
@@ -42,10 +42,10 @@ const Info = () => {
             </div>
 
             {/* Button */}
-            <div className="mt-2">
+            <div className="mt-10">
               <a
                 href="about"
-                className="inline-block rounded-lg border-2 border-primary px-8 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-white"
+                className="inline-block rounded-lg border border-gray-300 px-8 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 hover:border-gray-400 transition-colors"
               >
                 Learn more <span aria-hidden="true">→</span>
               </a>

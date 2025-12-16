@@ -59,21 +59,14 @@ const Technologies = () => {
   const duplicatedTechnologies = [...technologies, ...technologies, ...technologies];
 
   return (
-    <section className="py-16 sm:py-24 px-4 overflow-hidden">
+    <section className="py-32 sm:py-40 px-4 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto">
         <h2
-          className="text-4xl md:text-3xl text-center mb-10 text-text"
-          style={{ fontFamily: 'var(--font-heading)', fontWeight: '600' }}
+          className="text-4xl md:text-5xl text-center mb-16 text-gray-900"
+          style={{ fontFamily: 'var(--font-heading)', fontWeight: '700', lineHeight: '1.2' }}
         >
           Technologies We Use
         </h2>
-       { /*        <p
-          className="text-center text-text opacity-70 mb-16 max-w-3xl mx-auto"
-          style={{ fontFamily: 'var(--font-body)' }}
-        >
-          Leveraging cutting-edge tools and frameworks to build robust, scalable, and innovative solutions
-        </p>
-        */}
 
         {/* Infinite Scrolling Carousel */}
         <div className="relative overflow-hidden">
