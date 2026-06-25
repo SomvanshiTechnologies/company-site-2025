@@ -5,6 +5,8 @@ import AllNewsPage from "./pages/AllNewsPage";
 import NewsDetailPage from "./pages/NewsDetailPage";
 import AllTrendsPage from "./pages/AllTrendsPage";
 import TrendDetailPage from "./pages/TrendDetailPage";
+import InsightsPage from "./pages/InsightsPage";
+import InsightDetailPage from "./pages/InsightDetailPage";
 import SolutionsPage from "./pages/SolutionsPage";
 import AdminLogin from "./admin/AdminLogin";
 import ManagePage from "./admin/ManagePage";
@@ -24,6 +26,8 @@ export default function App() {
           <Route path="/news/:id" element={<NewsDetailPage />} />
           <Route path="/trends" element={<AllTrendsPage />} />
           <Route path="/trends/:id" element={<TrendDetailPage />} />
+          <Route path="/insights" element={<InsightsPage />} />
+          <Route path="/insights/:slug" element={<InsightDetailPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/about" element={<div>About Us Page</div>} />
           <Route path="/contact" element={<Contact/>} />
